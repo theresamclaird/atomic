@@ -4,36 +4,33 @@ import external from 'rollup-plugin-peer-deps-external';
 import commonjs from '@rollup/plugin-commonjs';
 import cleaner from 'rollup-plugin-cleaner';
 // import { terser } from 'rollup-plugin-terser';
-import jsx from 'rollup-plugin-jsx';
-
-const packageJson = require('./package.json');
+import multiInput from 'rollup-plugin-multi-input';
 
 export default [
   {
     input: './src/index.js',
     output: [
       {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
+        dir: 'dist',
+        format: 'es',
       },
       {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
+        dir: 'dist/cjs',
+        format: 'cjs',
       },
     ],
     external: ['react', 'react-dom', 'prop-types'],
     plugins: [
       cleaner({ targets: ['./dist/'] }),
-      nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
+      multiInput(),
       commonjs(),
       babel({
+        runtimeHelpers: true,
         exclude: 'node_modules/**',
         presets: ['@babel/preset-env', '@babel/preset-react'],
       }),
-      jsx({ factory: 'React.createElement' }),
       external(),
+      nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       // terser()
     ],
   }
