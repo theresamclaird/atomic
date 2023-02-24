@@ -3,7 +3,6 @@ import { babel } from '@rollup/plugin-babel';
 import visualizer from 'rollup-plugin-visualizer';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import multiInput from 'rollup-plugin-multi-input';
 import json from '@rollup/plugin-json';
 
 export default [
@@ -24,7 +23,6 @@ export default [
     ],
     plugins: [
       cleaner({ targets: ['./dist/'] }),
-      multiInput(),
       commonjs(),
       babel({
         configFile: './babel.config.json',
