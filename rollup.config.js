@@ -4,7 +4,6 @@ import external from 'rollup-plugin-peer-deps-external';
 import commonjs from '@rollup/plugin-commonjs';
 import cleaner from 'rollup-plugin-cleaner';
 // import { terser } from 'rollup-plugin-terser';
-import multiInput from 'rollup-plugin-multi-input';
 import jsx from 'rollup-plugin-jsx';
 
 const packageJson = require('./package.json');
@@ -14,12 +13,12 @@ export default [
     input: './src/index.js',
     output: [
       {
-        dir: 'dist/cjs',
+        file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
       },
       {
-        dir: 'dist/esm',
+        file: packageJson.module,
         format: 'esm',
         sourcemap: true,
       },
@@ -27,7 +26,6 @@ export default [
     external: ['react', 'react-dom', 'prop-types'],
     plugins: [
       cleaner({ targets: ['./dist/'] }),
-      multiInput(),
       nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       commonjs(),
       babel({
