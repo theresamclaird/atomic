@@ -7,6 +7,8 @@ import cleaner from 'rollup-plugin-cleaner';
 import multiInput from 'rollup-plugin-multi-input';
 import jsx from 'rollup-plugin-jsx';
 
+const packageJson = require('./package.json');
+
 export default [
   {
     input: './src/index.js',
@@ -14,10 +16,12 @@ export default [
       {
         dir: 'dist',
         format: 'es',
+        sourcemap: true,
       },
       {
         dir: 'dist/cjs',
         format: 'cjs',
+        sourcemap: true,
       },
     ],
     external: ['react', 'react-dom', 'prop-types'],
