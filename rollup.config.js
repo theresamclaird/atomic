@@ -12,7 +12,7 @@ export default [
     output: [
       {
         dir: 'dist',
-        format: 'esm',
+        format: 'es',
         exports: 'named',
       },
       {
