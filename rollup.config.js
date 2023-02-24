@@ -14,13 +14,13 @@ export default [
     input: './src/index.js',
     output: [
       {
-        dir: 'dist',
-        format: 'es',
+        dir: 'dist/cjs',
+        format: 'cjs',
         sourcemap: true,
       },
       {
-        dir: 'dist/cjs',
-        format: 'cjs',
+        dir: 'dist',
+        format: 'es',
         sourcemap: true,
       },
     ],
@@ -28,6 +28,7 @@ export default [
     plugins: [
       cleaner({ targets: ['./dist/'] }),
       multiInput(),
+      nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       commonjs(),
       babel({
         exclude: 'node_modules/**',
@@ -35,7 +36,6 @@ export default [
       }),
       jsx({ factory: 'React.createElement' }),
       external(),
-      nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       // terser()
     ],
   }

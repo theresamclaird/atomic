@@ -1,6 +1,6 @@
 {
   "name": "@theresamclaird/atomic",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "React component library",
   "main": "index.js",
   "scripts": {
