@@ -13,12 +13,10 @@ export default [
       {
         dir: 'dist',
         format: 'es',
-        exports: 'named',
       },
       {
         dir: 'dist/cjs',
         format: 'cjs',
-        exports: 'named',
       },
     ],
     external: ['react', 'react-dom', 'prop-types'],
@@ -32,7 +30,7 @@ export default [
       }),
       external(),
       nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
-      terser()
+      // terser()
     ],
   }
 ];
