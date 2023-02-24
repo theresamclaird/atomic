@@ -26,7 +26,7 @@ export default [
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        presets: ['@babel/preset-react'],
+        presets: ['@babel/preset-env', '@babel/preset-react'],
       }),
       external(),
       nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
