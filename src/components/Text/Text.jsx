@@ -25,4 +25,4 @@ Text.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };
 
-export { Text, Text as default };
+export { Text };

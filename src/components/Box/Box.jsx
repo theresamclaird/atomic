@@ -22,7 +22,7 @@ const variant = ({
     get(theme, variant)),
 )(theme);
 
-export const Box = styled('div', {
+const Box = styled('div', {
   shouldForwardProp,
 })({
   boxSizing: 'border-box',
@@ -42,5 +42,7 @@ compose(
 ));
 Box.displayName = 'Box';
 
-export const Flex = styled(Box)({ display: 'flex' });
+const Flex = styled(Box)({ display: 'flex' });
 Flex.displayName = 'Flex';
+
+export { Box, Flex };
