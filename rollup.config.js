@@ -10,25 +10,26 @@ export default [
     input: './src/index.js',
     output: [
       {
-        file: 'dist/index.js',
-        format: 'cjs',
+        dir: 'dist',
+        format: 'esm',
+        exports: 'named',
       },
       {
-        file: 'dist/index.es.js',
-        format: 'es',
+        dir: 'dist/cjs',
+        format: 'cjs',
         exports: 'named',
       },
     ],
     external: ['react', 'react-dom', 'prop-types'],
     plugins: [
-      cleaner(),
+      cleaner({ targets: ['./dist/'] }),
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        presets: ['@babel/preset-react']
+        presets: ['@babel/preset-react'],
       }),
       external(),
-      nodeResolve({ extensions: ['.js', '.jsx']}),
+      nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       terser()
     ],
   }
