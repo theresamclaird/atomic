@@ -6,17 +6,19 @@ import cleaner from 'rollup-plugin-cleaner';
 // import { terser } from 'rollup-plugin-terser';
 import multiInput from 'rollup-plugin-multi-input';
 
+const packageJson = require('./package.json');
+
 export default [
   {
     input: './src/index.js',
     output: [
       {
-        dir: 'dist',
-        format: 'es',
-      },
-      {
         dir: 'dist/cjs',
         format: 'cjs',
+      },
+      {
+        dir: 'dist/esm',
+        format: 'esm',
       },
     ],
     external: ['react', 'react-dom', 'prop-types'],
