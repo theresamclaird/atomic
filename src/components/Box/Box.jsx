@@ -25,7 +25,7 @@ const variant = ({
 const Box = styled('div', {
   shouldForwardProp,
 })({
-  backgroundColor: '#0f0',
+  backgroundColor: '#00f',
   boxSizing: 'border-box',
   minWidth: 0,
 },

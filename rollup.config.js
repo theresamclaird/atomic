@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import cleaner from 'rollup-plugin-cleaner';
 // import { terser } from 'rollup-plugin-terser';
 import multiInput from 'rollup-plugin-multi-input';
+import jsx from 'rollup-plugin-jsx';
 
 export default [
   {
@@ -26,9 +27,9 @@ export default [
       commonjs(),
       babel({
         exclude: 'node_modules/**',
-        plugins: ["@babel/plugin-transform-react-jsx"],
         presets: ['@babel/preset-env', '@babel/preset-react'],
       }),
+      jsx({ factory: 'React.createElement' }),
       external(),
       nodeResolve({ extensions: ['.js', '.jsx', '.mjs', '.json'] }),
       // terser()
