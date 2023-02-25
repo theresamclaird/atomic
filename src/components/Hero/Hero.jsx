@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box } from '../Box';
 import { Image } from '../Image';
 
-const Hero = ({ alt, src, children, ...props }) => (
+const Hero = ({ alt, src, sx, children, ...props }) => (
   <Box
     sx={{
       backgroundColor: 'white',
@@ -11,6 +11,7 @@ const Hero = ({ alt, src, children, ...props }) => (
       minWidth: '300px',
       m: '6rem',
       p: 0,
+      ...sx,
     }}
     {...props}
   >
