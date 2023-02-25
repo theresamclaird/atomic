@@ -10,14 +10,27 @@ export default {
   },
 };
 
-const Template = (args) => <Text {...args}>This is text as h1 with some styling.</Text>;
+const Template = (args) => <Text {...args} />;
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const p = Template.bind({});
+p.args = {
+  children: 'This is paragraph text.',
+};
+
+export const h1 = Template.bind({});
+h1.args = {
   as: 'h1',
-  sx: {
-    p: '1rem',
-    bg: '#008000',
-    color: '#fff',
-  }
+  children: 'This is an h1 heading.',
+};
+
+export const h2 = Template.bind({});
+h2.args = {
+  as: 'h2',
+  children: 'This is an h2 heading.',
+};
+
+export const h3 = Template.bind({});
+h3.args = {
+  as: 'h3',
+  children: 'This is an h3 heading.',
 };
