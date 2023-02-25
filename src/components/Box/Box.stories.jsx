@@ -16,7 +16,6 @@ export const Playground = Template.bind({});
 Playground.args = {
   sx: {
     p: '1rem',
-    bg: '#800080',
-    color: '#fff',
+    bg: '#BDB5D5',
   }
 };
