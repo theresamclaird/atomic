@@ -4,41 +4,36 @@ const fontWeight = {
   bold: '600',
 };
 
+const defaultText = {
+  fontFamily,
+  fontSize: '1rem',
+  fontWeight: fontWeight.normal,
+  color: 'primary',
+  m: 0,
+  padding: 0,
+};
+
 const theme = {
   colors: {
     primary: '#000',
     background: '#BDB5D5',
   },
   text: {
-    default: {
-      fontFamily,
-      fontSize: '1rem',
-      fontWeight: 'normal',
-      color: 'primary',
-    },
-    p: {
-      fontFamily,
-      fontSize: '1rem',
-      fontWeight: 'normal',
-      color: 'primary',
-    },
+    default: defaultText,
+    p: defaultText,
     h1: {
-      fontFamily,
+      ...defaultText,
       fontSize: '2rem',
-      fontWeight: 'bold',
-      color: 'primary',
+      fontWeight: fontWeight.bold,
     },
     h2: {
-      fontFamily,
+      ...defaultText,
       fontSize: '1.5rem',
-      fontWeight: 'bold',
-      color: 'primary',
+      fontWeight: fontWeight.bold,
     },
     h3: {
-      fontFamily,
-      fontSize: '1rem',
-      fontWeight: 'bold',
-      color: 'primary',
+      ...defaultText,
+      fontWeight: fontWeight.bold,
     },
   },
 };
