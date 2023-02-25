@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
-import defaultTheme from '../../themes';
+import { defaultTheme } from '../../themes';
 
 const ThemeProvider = ({ theme: themeOverrides, children }) => (
   <EmotionThemeProvider theme={{ ...defaultTheme, ...themeOverrides }}>{children}</EmotionThemeProvider>
