@@ -11,4 +11,4 @@ Image.propTypes = {
   src: PropTypes.string.isRequired,
 };
 
-export { Image };
+export { Image, Image as default };
