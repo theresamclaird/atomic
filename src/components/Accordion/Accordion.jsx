@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Box, Flex } from '../Box';
 import { Text } from '../Text';
 
-const Accordion = ({ label, expandIcon, collapseIcon, children, ...props }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ...props }) => {
+  const [isExpanded, setIsExpanded] = useState(expanded);
 
   return (
     <Box {...props}>
@@ -18,8 +18,8 @@ const Accordion = ({ label, expandIcon, collapseIcon, children, ...props }) => {
           p: '1rem',
         }}
       >
-        <Text>{label}</Text>
-        <Text>{isExpanded ? collapseIcon : expandIcon}</Text>
+        {label}
+        <Text>{isExpanded ? collapseSymbol : expandSymbol}</Text>
       </Flex>
       <Box
         sx={{
@@ -33,10 +33,17 @@ const Accordion = ({ label, expandIcon, collapseIcon, children, ...props }) => {
   );
 };
 
+Accordion.defaultProps = {
+  expanded: false,
+  expandSymbol: '+',
+  collapseSymbol: '-',
+};
+
 Accordion.propTypes = {
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  expandIcon: PropTypes.string.isRequired,
-  collapseIcon: PropTypes.string.isRequired,
+  expanded: PropTypes.bool,
+  label: PropTypes.node.isRequired,
+  expandSymbol: PropTypes.string,
+  collapseSymbol: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

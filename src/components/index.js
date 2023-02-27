@@ -4,3 +4,4 @@ export * from './ThemeProvider';
 export * from './Image';
 export * from './Hero';
 export * from './Accordion';
+export * from './AccordionGroup';
