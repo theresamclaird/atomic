@@ -14,8 +14,8 @@ const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ..
           ':hover': { cursor: 'pointer' },
           flexDirection: 'row',
           justifyContent: 'space-between',
-          gap: '1rem',
-          p: '1rem',
+          gap: 'small',
+          p: 'small',
         }}
       >
         {label}
@@ -23,7 +23,7 @@ const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ..
       </Flex>
       <Box
         sx={{
-          p: '1rem',
+          p: 'small',
           display: isExpanded ? 'block' : 'none',
         }}
       >

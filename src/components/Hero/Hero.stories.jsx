@@ -14,8 +14,8 @@ export default {
 
 const Template = (args) => (
   <Hero {...args}>
-    <Text as="h1">Theresa &amp; Dana</Text>
-    <Text sx={{ mt: '2rem' }}>We are engineers living happily in the Pacific Northwest. Our interests include technology, puzzles, hiking, photography, amateur radio, and music.</Text>
+  <Text as="h1">Theresa &amp; Dana</Text>
+    <Text sx={{ mt: ['small', 'medium'] }}>We are engineers living happily in the Pacific Northwest. Our interests include technology, puzzles, hiking, photography, amateur radio, and music.</Text>
   </Hero>
 );
 
@@ -26,5 +26,5 @@ Playground.args = {
 };
 
 Playground.parameters = {
-  backgrounds: { default: '#f00' },
+  backgrounds: { default: 'dark' },
 };

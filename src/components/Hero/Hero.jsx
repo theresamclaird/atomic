@@ -7,9 +7,7 @@ const Hero = ({ alt, src, sx, children, ...props }) => (
   <Box
     sx={{
       backgroundColor: 'white',
-      maxWidth: '50%',
-      minWidth: '300px',
-      m: '6rem',
+      m: 0,
       p: 0,
       ...sx,
     }}
@@ -20,7 +18,7 @@ const Hero = ({ alt, src, sx, children, ...props }) => (
       src={src}
       sx={{ maxWidth: '100%' }}
     />
-    {children && <Box sx={{ p: '2rem' }}>{children}</Box>}
+    {children && <Box sx={{ p: ['small', 'medium'] }}>{children}</Box>}
   </Box>
 );
 

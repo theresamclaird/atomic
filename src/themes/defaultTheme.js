@@ -13,7 +13,22 @@ const defaultText = {
   padding: 0,
 };
 
+const breakpoints = ['393px', '768px', '1280px'];
+
+const space = [0, '1rem', '2rem', '3rem'];
+space.none = space[0];
+space.small = space[1];
+space.medium = space[2];
+space.large = space[3];
+
 const theme = {
+  breakpoints,
+  mediaQueries: {
+    small: `@media screen and (min-width: ${breakpoints[0]})`,
+    medium: `@media screen and (min-width: ${breakpoints[1]})`,
+    large: `@media screen and (min-width: ${breakpoints[2]})`,
+  },
+  space,
   colors: {
     primary: '#000',
     background: '#BDB5D5',
