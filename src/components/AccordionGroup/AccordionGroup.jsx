@@ -1,5 +1,6 @@
 import React, { Children, useReducer, cloneElement } from 'react';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 
 const AccordionGroup = ({ reducer, children, expandSymbol, collapseSymbol, ...props }) => {
@@ -9,7 +10,7 @@ const AccordionGroup = ({ reducer, children, expandSymbol, collapseSymbol, ...pr
   return (
     <Box {...props}>
       {childArray.map((child, index) => (cloneElement(child, {
-        key: child.label,
+        key: nanoid(),
         expandSymbol,
         collapseSymbol,
         expanded: state[index],
