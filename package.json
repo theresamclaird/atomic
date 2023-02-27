@@ -1,6 +1,6 @@
 {
   "name": "@theresamclaird/atomic",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "React component library",
   "author": "Theresa McLaird <theresa@mclairdfamily.com>",
   "license": "UNLICENSED",
@@ -25,6 +25,7 @@
     "@emotion/styled": "^11.1.5",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
+    "nanoid": "^4.0.1",
     "styled-system": "^5.1.5"
   },
   "peerDependencies": {
@@ -51,7 +52,6 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.2",
-    "nanoid": "^4.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
