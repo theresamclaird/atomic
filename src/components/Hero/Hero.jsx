@@ -13,11 +13,7 @@ const Hero = ({ alt, src, sx, children, ...props }) => (
     }}
     {...props}
   >
-    <Image
-      alt={alt}
-      src={src}
-      sx={{ maxWidth: '100%' }}
-    />
+    <Image alt={alt} src={src} sx={{ width: '100%', objectFit: 'contain' }} />
     {children && <Box sx={{ p: ['small', 'medium'] }}>{children}</Box>}
   </Box>
 );

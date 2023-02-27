@@ -23,6 +23,9 @@ export const Playground = Template.bind({});
 Playground.args = {
   src: imageFile,
   alt: "Theresa & Dana",
+  sx: {
+    width: '600px',
+  },
 };
 
 Playground.parameters = {
