@@ -25,7 +25,6 @@
     "@emotion/styled": "^11.1.5",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
-    "nanoid": "^4.0.1",
     "styled-system": "^5.1.5"
   },
   "peerDependencies": {
