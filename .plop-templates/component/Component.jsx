@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Box } from '../Box';
 
 function {{componentName}}({ sx, ...props }) {
-  return (<Box sx=\{{ ...sx}} {...props} />);
+  return (<Box sx=\{{ ...sx }} {...props} />);
 }
 
 {{componentName}}.defaultProps = {
