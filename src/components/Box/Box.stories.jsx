@@ -11,23 +11,27 @@ export default {
   },
 };
 
-const UnorderedListTemplate = (args) => (
-  <Box {...args}>
-    <Text as="li">List Item 1</Text>
-    <Text as="li">List Item 2</Text>
-    <Text as="li">List Item 3</Text>
-  </Box>
-);
+function UnorderedListTemplate(args) {
+  return (
+    <Box {...args}>
+      <Text as="li">List Item 1</Text>
+      <Text as="li">List Item 2</Text>
+      <Text as="li">List Item 3</Text>
+    </Box>
+  );
+}
 export const ul = UnorderedListTemplate.bind({});
 ul.args = {
-  as: 'ul'
+  as: 'ul',
 };
 
-const Template = (args) => <Box {...args}>This is a Box with some styling.</Box>;
+function Template(args) {
+  return <Box {...args}>This is a Box with some styling.</Box>;
+}
 export const example = Template.bind({});
 example.args = {
   sx: {
     p: '1rem',
     bg: '#BDB5D5',
-  }
+  },
 };

@@ -12,17 +12,19 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Hero {...args}>
-  <Text as="h1">Theresa &amp; Dana</Text>
-    <Text sx={{ mt: ['small', 'medium'] }}>We are engineers living happily in the Pacific Northwest. Our interests include technology, puzzles, hiking, photography, amateur radio, and music.</Text>
-  </Hero>
-);
+function Template(args) {
+  return (
+    <Hero {...args}>
+      <Text as="h1">Theresa &amp; Dana</Text>
+      <Text sx={{ mt: ['small', 'medium'] }}>We are engineers living happily in the Pacific Northwest. Our interests include technology, puzzles, hiking, photography, amateur radio, and music.</Text>
+    </Hero>
+  );
+}
 
 export const example = Template.bind({});
 example.args = {
   src: imageFile,
-  alt: "Theresa & Dana",
+  alt: 'Theresa & Dana',
   sx: {
     width: '600px',
   },

@@ -10,7 +10,9 @@ export default {
   },
 };
 
-const Template = (args) => <Text {...args} />;
+function Template(args) {
+  return <Text {...args} />;
+}
 
 export const anchor = Template.bind({});
 anchor.args = {

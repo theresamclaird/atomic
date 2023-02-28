@@ -11,11 +11,13 @@ export default {
   },
 };
 
-const Template = (args) => <Image {...args} />;
+function Template(args) {
+  return <Image {...args} />;
+}
 
 export const example = Template.bind({});
 example.args = {
-  alt: "Theresa and Dana",
+  alt: 'Theresa and Dana',
   src: imageFile,
   sx: {
     maxWidth: '50%',

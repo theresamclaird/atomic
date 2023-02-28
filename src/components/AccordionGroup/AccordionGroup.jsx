@@ -2,14 +2,16 @@ import React, { Children, useReducer, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
 
-const AccordionGroup = ({ reducer, children, expandSymbol, collapseSymbol, ...props }) => {
+function AccordionGroup({
+  reducer, children, expandSymbol, collapseSymbol, ...props
+}) {
   const childArray = Children.toArray(children);
-  const [state, dispatch] = useReducer(reducer, childArray.map(child => !!child.expanded));
+  const [state, dispatch] = useReducer(reducer, childArray.map((child) => !!child.expanded));
 
   return (
     <Box {...props}>
       {childArray.map((child, index) => (cloneElement(child, {
-        key: `${index}${child.label}`,
+        key: child.label,
         expandSymbol,
         collapseSymbol,
         expanded: state[index],
@@ -17,10 +19,12 @@ const AccordionGroup = ({ reducer, children, expandSymbol, collapseSymbol, ...pr
       })))}
     </Box>
   );
-};
+}
 
 AccordionGroup.defaultProps = {
-  reducer: (state, action) => state.map((value, index) => (index === action.index ? !value : value)),
+  reducer: (state, action) => (
+    state.map((value, index) => (index === action.index ? !value : value))
+  ),
   expandSymbol: '+',
   collapseSymbol: '-',
 };

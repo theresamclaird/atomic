@@ -4,34 +4,35 @@ import { useTheme } from '@emotion/react';
 import { Box } from '../Box';
 
 const Text = forwardRef(({
-    as, sx, children, ...props
+  as, sx, children, ...props
 }, ref) => {
-    const theme = useTheme();
-    const asStyle = theme?.text?.[as] || theme?.text?.default || {};
+  const theme = useTheme();
+  const asStyle = theme?.text?.[as] || theme?.text?.default || {};
 
-    return (
-        <Box
-            as={as}
-            ref={ref}
-            sx={{
-                ...asStyle,
-                ...sx,
-            }}
-            {...props}
-        >
-            {children}
-        </Box>
-    );
+  return (
+    <Box
+      as={as}
+      ref={ref}
+      sx={{
+        ...asStyle,
+        ...sx,
+      }}
+      {...props}
+    >
+      {children}
+    </Box>
+  );
 });
 
 Text.defaultProps = {
-    as: 'p',
-    sx: {},
+  as: 'p',
+  sx: {},
 };
 
 Text.propTypes = {
-    as: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  as: PropTypes.string,
+  sx: PropTypes.objectOf(PropTypes.any),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };
 
 export { Text, Text as default };

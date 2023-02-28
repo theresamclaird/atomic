@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Box, Flex } from '../Box';
 import { Text } from '../Text';
 
-const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ...props }) => {
+function Accordion({
+  expanded, label, expandSymbol, collapseSymbol, children, ...props
+}) {
   const [isExpanded, setIsExpanded] = useState(expanded);
 
   return (
@@ -31,7 +33,7 @@ const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ..
       </Box>
     </Box>
   );
-};
+}
 
 Accordion.defaultProps = {
   expanded: false,

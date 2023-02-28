@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+
 const fontFamily = 'Arial, Helvetica, sans-serif';
 const fontWeight = {
   normal: '400',
@@ -44,7 +46,7 @@ const theme = {
       color: 'anchor',
       ':hover': {
         textDecoration: 'underline',
-      }
+      },
     },
     p: defaultText,
     h1: {
