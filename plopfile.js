@@ -7,14 +7,15 @@ const componentFoldersInPath = path => (
     .map(folder => folder.name)
 );
 
-const componentPath = './src/components/{{componentName}}/';
+const componentsRootPath = './src/components/';
+const componentPath = `${componentsRootPath}{{componentName}}/`;
 
 const generateComponentsIndex = {
   type: 'add',
   force: true,
   templateFile: '.plop-templates/index.js',
   path: 'src/components/index.js',
-  data: { components: () => componentFoldersInPath('./src/components/') },
+  data: { components: () => componentFoldersInPath(componentsRootPath) },
 };
 
 module.exports = plop => {
@@ -31,17 +32,17 @@ module.exports = plop => {
       {
         type: 'add',
         templateFile: '.plop-templates/component/Component.jsx',
-        path: 'src/components/{{componentName}}/{{componentName}}.jsx',
+        path: `${componentPath}{{componentName}}.jsx`,
       },
       {
         type: 'add',
         templateFile: '.plop-templates/component/Component.stories.jsx',
-        path: 'src/components/{{componentName}}/{{componentName}}.stories.jsx',
+        path: `${componentPath}{{componentName}}.stories.jsx`,
       },
       {
         type: 'add',
         templateFile: '.plop-templates/component/index.js',
-        path: 'src/components/{{componentName}}/index.js',
+        path: `${componentPath}index.js`,
       },
       generateComponentsIndex,
     ],
@@ -50,9 +51,10 @@ module.exports = plop => {
     description: 'remove component',
     prompts: [
       {
-        type: 'input',
+        type: 'list',
         name: 'componentName',
-        message: 'Component Name?',
+        message: 'Component?',
+        choices: componentFoldersInPath(componentsRootPath),
       }
     ],
     actions: [
