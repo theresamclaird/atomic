@@ -1,6 +1,6 @@
 {
   "name": "@theresamclaird/atomic",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "React component library",
   "author": "Theresa McLaird <theresa@mclairdfamily.com>",
   "license": "UNLICENSED",
@@ -19,7 +19,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "plop": "plop",
-    "patch": "npm version patch --force"
+    "patch": "npm version patch --force && npm run build && npm publish"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
