@@ -12,6 +12,13 @@ export default {
 
 const Template = (args) => <Text {...args} />;
 
+export const a = Template.bind({});
+a.args = {
+  as: 'a',
+  href: 'https://www.theresamclaird.com/',
+  children: 'This is link text.',
+};
+
 export const p = Template.bind({});
 p.args = {
   children: 'This is paragraph text.',

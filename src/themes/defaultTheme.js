@@ -32,9 +32,18 @@ const theme = {
   colors: {
     primary: '#000',
     background: '#BDB5D5',
+    anchor: '#562cac',
   },
   text: {
     default: defaultText,
+    a: {
+      ...defaultText,
+      textDecoration: 'none',
+      color: 'anchor',
+      ':hover': {
+        textDecoration: 'underline',
+      }
+    },
     p: defaultText,
     h1: {
       ...defaultText,
