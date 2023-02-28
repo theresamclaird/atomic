@@ -19,8 +19,8 @@ const Template = (args) => (
   </Hero>
 );
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const example = Template.bind({});
+example.args = {
   src: imageFile,
   alt: "Theresa & Dana",
   sx: {
@@ -28,6 +28,6 @@ Playground.args = {
   },
 };
 
-Playground.parameters = {
+example.parameters = {
   backgrounds: { default: 'dark' },
 };

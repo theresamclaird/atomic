@@ -24,8 +24,8 @@ ul.args = {
 };
 
 const Template = (args) => <Box {...args}>This is a Box with some styling.</Box>;
-export const Playground = Template.bind({});
-Playground.args = {
+export const example = Template.bind({});
+example.args = {
   sx: {
     p: '1rem',
     bg: '#BDB5D5',

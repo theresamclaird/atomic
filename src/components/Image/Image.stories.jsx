@@ -13,8 +13,8 @@ export default {
 
 const Template = (args) => <Image {...args} />;
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const example = Template.bind({});
+example.args = {
   alt: "Theresa and Dana",
   src: imageFile,
   sx: {

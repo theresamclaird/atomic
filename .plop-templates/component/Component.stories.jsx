@@ -11,5 +11,5 @@ export default {
 
 const Template = (args) => <{{componentName}} {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const example = Template.bind({});
+example.args = {};

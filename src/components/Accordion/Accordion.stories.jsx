@@ -16,7 +16,7 @@ const Template = (args) => (
   </Accordion>
 );
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const example = Template.bind({});
+example.args = {
   label: <Text as="h3">Lorem Ipsum</Text>,
 };

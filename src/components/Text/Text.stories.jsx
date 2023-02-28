@@ -12,32 +12,32 @@ export default {
 
 const Template = (args) => <Text {...args} />;
 
-export const a = Template.bind({});
-a.args = {
+export const anchor = Template.bind({});
+anchor.args = {
   as: 'a',
   href: 'https://www.theresamclaird.com/',
   children: 'This is link text.',
 };
 
-export const p = Template.bind({});
-p.args = {
+export const paragraph = Template.bind({});
+paragraph.args = {
   children: 'This is paragraph text.',
 };
 
-export const h1 = Template.bind({});
-h1.args = {
+export const heading1 = Template.bind({});
+heading1.args = {
   as: 'h1',
   children: 'This is an h1 heading.',
 };
 
-export const h2 = Template.bind({});
-h2.args = {
+export const heading2 = Template.bind({});
+heading2.args = {
   as: 'h2',
   children: 'This is an h2 heading.',
 };
 
-export const h3 = Template.bind({});
-h3.args = {
+export const heading3 = Template.bind({});
+heading3.args = {
   as: 'h3',
   children: 'This is an h3 heading.',
 };

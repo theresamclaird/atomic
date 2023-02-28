@@ -31,5 +31,5 @@ const Template = (args) => (
   </AccordionGroup>
 );
 
-export const Playground = Template.bind({});
-Playground.args = {};
+export const example = Template.bind({});
+example.args = {};
