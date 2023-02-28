@@ -1,6 +1,6 @@
 {
   "name": "@theresamclaird/atomic",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "React component library",
   "author": "Theresa McLaird <theresa@mclairdfamily.com>",
   "license": "UNLICENSED",
@@ -16,10 +16,10 @@
     "lint": "eslint --ext js,jsx src/",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "plop": "plop"
+    "plop": "plop",
+    "patch": "npm version patch --force"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
