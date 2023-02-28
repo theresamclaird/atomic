@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box } from './Box';
+import { Text } from '../Text';
 
 export default {
   title: 'Atomic/Box',
@@ -10,8 +11,19 @@ export default {
   },
 };
 
-const Template = (args) => <Box {...args}>This is a Box with some styling.</Box>;
+const UnorderedListTemplate = (args) => (
+  <Box {...args}>
+    <Text as="li">List Item 1</Text>
+    <Text as="li">List Item 2</Text>
+    <Text as="li">List Item 3</Text>
+  </Box>
+);
+export const ul = UnorderedListTemplate.bind({});
+ul.args = {
+  as: 'ul'
+};
 
+const Template = (args) => <Box {...args}>This is a Box with some styling.</Box>;
 export const Playground = Template.bind({});
 Playground.args = {
   sx: {

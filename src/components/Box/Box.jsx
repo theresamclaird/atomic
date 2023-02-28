@@ -2,11 +2,7 @@ import styled from '@emotion/styled';
 import {
   compose,
   space,
-  border,
-  layout,
-  typography,
   color,
-  flexbox,
 } from 'styled-system';
 import css, { get } from '@styled-system/css';
 import shouldForwardProp from '@styled-system/should-forward-prop';
@@ -34,11 +30,7 @@ sx,
 props => props.css,
 compose(
   space,
-  border,
-  layout,
-  typography,
   color,
-  flexbox,
 ));
 Box.displayName = 'Box';
 

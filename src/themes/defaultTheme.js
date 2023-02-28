@@ -30,12 +30,14 @@ const theme = {
   },
   space,
   colors: {
-    primary: '#000',
-    background: '#BDB5D5',
+    background: '#bdb5d5',
+    primary: '#333',
     anchor: '#562cac',
+    white: '#fff',
   },
   text: {
     default: defaultText,
+    li: { my: 'small' },
     a: {
       ...defaultText,
       textDecoration: 'none',
