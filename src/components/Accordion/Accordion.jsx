@@ -15,7 +15,7 @@ const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ..
           flexDirection: 'row',
           justifyContent: 'space-between',
           gap: 'small',
-          p: 'small',
+          pb: 'small',
         }}
       >
         {label}
@@ -23,7 +23,7 @@ const Accordion = ({ expanded, label, expandSymbol, collapseSymbol, children, ..
       </Flex>
       <Box
         sx={{
-          p: 'small',
+          pb: 'small',
           display: isExpanded ? 'block' : 'none',
         }}
       >
