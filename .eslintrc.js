@@ -24,5 +24,6 @@ module.exports = {
     'import/no-named-as-default': 'off',
     'no-restricted-exports': 'off',
     'react/forbid-prop-types': 'off',
+    'linebreak-style': 0,
   },
 };
