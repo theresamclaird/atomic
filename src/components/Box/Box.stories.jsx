@@ -20,16 +20,16 @@ function UnorderedListTemplate(args) {
     </Box>
   );
 }
-export const ul = UnorderedListTemplate.bind({});
-ul.args = {
+export const UnorderedList = UnorderedListTemplate.bind({});
+UnorderedList.args = {
   as: 'ul',
 };
 
 function Template(args) {
   return <Box {...args}>This is a Box with some styling.</Box>;
 }
-export const example = Template.bind({});
-example.args = {
+export const Example = Template.bind({});
+Example.args = {
   sx: {
     p: '1rem',
     bg: '#BDB5D5',

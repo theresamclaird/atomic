@@ -21,8 +21,8 @@ function Template(args) {
   );
 }
 
-export const example = Template.bind({});
-example.args = {
+export const Example = Template.bind({});
+Example.args = {
   src: imageFile,
   alt: 'Theresa & Dana',
   sx: {
@@ -30,6 +30,6 @@ example.args = {
   },
 };
 
-example.parameters = {
+Example.parameters = {
   backgrounds: { default: 'dark' },
 };

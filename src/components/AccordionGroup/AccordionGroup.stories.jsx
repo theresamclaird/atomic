@@ -57,5 +57,5 @@ function Template(args) {
   );
 }
 
-export const example = Template.bind({});
-example.args = {};
+export const Example = Template.bind({});
+Example.args = {};

@@ -30,7 +30,7 @@ function Template(args) {
   );
 }
 
-export const example = Template.bind({});
-example.args = {
+export const Example = Template.bind({});
+Example.args = {
   label: <Text as="h3">Lorem Ipsum</Text>,
 };

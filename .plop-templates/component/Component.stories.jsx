@@ -1,5 +1,5 @@
 import React from 'react';
-import {{componentName}} from '.';
+import {{componentName}} from './{{componentName}}';
 
 export default {
   title: 'Atomic/{{componentName}}',
@@ -9,7 +9,9 @@ export default {
   },
 };
 
-const Template = (args) => <{{componentName}} {...args} />;
+function Template(args) {
+  return <{{componentName}} {...args} />;
+}
 
-export const example = Template.bind({});
-example.args = {};
+export const Example = Template.bind({});
+Example.args = {};

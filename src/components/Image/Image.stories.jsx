@@ -15,8 +15,8 @@ function Template(args) {
   return <Image {...args} />;
 }
 
-export const example = Template.bind({});
-example.args = {
+export const Example = Template.bind({});
+Example.args = {
   alt: 'Theresa and Dana',
   src: imageFile,
   sx: {
