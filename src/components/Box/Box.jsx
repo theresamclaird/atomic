@@ -26,10 +26,6 @@ const variant = ({
 const Box = styled('div', {
   shouldForwardProp,
 })(
-  {
-    boxSizing: 'border-box',
-    minWidth: 0,
-  },
   base,
   variant,
   sx,

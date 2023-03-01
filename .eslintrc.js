@@ -25,5 +25,11 @@ module.exports = {
     'no-restricted-exports': 'off',
     'react/forbid-prop-types': 'off',
     'linebreak-style': 0,
+    'import/no-unresolved': [
+      'error',
+      {
+        'ignore': ['\.svg'],
+      }
+    ],
   },
 };
