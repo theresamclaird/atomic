@@ -6,3 +6,4 @@ export * from './Image';
 export * from './Panel';
 export * from './Text';
 export * from './ThemeProvider';
+export * from './HoverBox';
