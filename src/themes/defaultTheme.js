@@ -39,7 +39,10 @@ const theme = {
   },
   text: {
     default: defaultText,
-    li: { my: 'small' },
+    li: {
+      ...defaultText,
+      my: 'small',
+    },
     a: {
       ...defaultText,
       textDecoration: 'none',
