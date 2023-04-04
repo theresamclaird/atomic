@@ -23,7 +23,15 @@ space.small = space[1];
 space.medium = space[2];
 space.large = space[3];
 
+const keyframes = {
+  '@keyframes fadeIn': {
+    '0%': { display: 'none', opacity: 0 },
+    '100%': { display: 'flex', opacity: 1 },
+  },
+};
+
 const theme = {
+  keyframes,
   breakpoints,
   mediaQueries: {
     small: `@media screen and (min-width: ${breakpoints[0]})`,

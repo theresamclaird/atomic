@@ -26,6 +26,11 @@ function Accordion({
       <Box
         sx={{
           pb: 'small',
+          '@keyframes slideOpen': {
+            '0%': { display: 'none', opacity: 0 },
+            '100%': { display: 'block', opacity: 1 },
+          },
+          animation: 'slideOpen 0.333s ease 1',
           display: isExpanded ? 'block' : 'none',
         }}
       >
