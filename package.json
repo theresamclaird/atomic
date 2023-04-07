@@ -1,6 +1,6 @@
 {
   "name": "@theresamclaird/atomic",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "React component library",
   "author": "Theresa McLaird <theresa@mclairdfamily.com>",
   "license": "UNLICENSED",
@@ -31,8 +31,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -62,8 +62,8 @@
     "eslint-plugin-storybook": "^0.6.11",
     "plop": "^3.1.2",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup": "^2.41.4",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-visualizer": "^4.2.0"
