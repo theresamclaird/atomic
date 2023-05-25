@@ -7,7 +7,7 @@ function Image({
 }) {
   return (
     <Box as="picture">
-      {srcSets.map((srcSet) => <Box as="source" srcSet={srcSet} />)}
+      {srcSets.map((srcSet) => <Box as="source" key={srcSet} srcSet={srcSet} />)}
       <Box as="img" alt={alt} src={src} {...props} />
     </Box>
   );
