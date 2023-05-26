@@ -3,7 +3,7 @@ import { Hero } from './Hero';
 import { Text } from '../Text';
 
 export default {
-  title: 'Atomic/Hero',
+  title: 'Components/Hero',
   component: Hero,
   argTypes: {
     sx: { table: { disable: true } },
@@ -29,7 +29,8 @@ Example.args = {
   ],
   aspectRatio: 1.618,
   sx: {
-    width: '600px',
+    width: '50%',
+    margin: '0 auto',
   },
 };
 

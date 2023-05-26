@@ -1,0 +1,60 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Image } from './Image';
+
+<Meta title="Components/Image" component={Image} />
+
+# Image
+
+The Image Component renders a responsive image.
+
+## Basic Image
+
+At its most basic, the Image component requires `alt` and `src` props, as well as an optional `sx` prop for styling.
+
+<Canvas>
+  <Story name="Basic Image">
+    <Image
+      alt="Llama Cria"
+      src="https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.webp"
+      sx={{ width: 300 }}
+    />
+  </Story>
+</Canvas>
+
+## Responsive Image
+
+An optional `sources` prop can be used to specify media and srcsets sources for images of different types (e.g. webp, jpg) as well as screen sizes. The `src` prop is still required, and is used as a fallback image.
+
+<Canvas>
+  <Story name="Responsive Image">
+    <Image
+      alt="Llama Cria"
+      src="https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.webp"
+      sources={[
+        { srcset: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.webp 300w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-600x371.webp 600w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-900x556.webp 900w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-1200x742.webp 1200w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-2400x1483.webp 2400w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-3600x2225.webp 3600w' },
+        { srcset: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.jpg 300w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-600x371.jpg 600w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-900x556.jpg 900w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-1200x742.jpg 1200w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-2400x1483.jpg 2400w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-3600x2225.jpg 3600w' },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+## Aspect Ratio
+
+To prevent content shift as the image loads, an optional `aspectRatio` prop will wrap the image in a container taking up 100% of the available width and an amount of vertical space indicated by the supplied `aspectRatio`.
+
+A level of art direction can be achieved with the `sx` prop, for example declaring `object-fit` and `object-position`.
+
+<Canvas>
+  <Story name="Aspect Ratio">
+    <Image
+      aspectRatio={1}
+      alt="Llama Cria"
+      src="https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.webp"
+      sources={[
+        { srcset: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.webp 300w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-600x371.webp 600w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-900x556.webp 900w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-1200x742.webp 1200w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-2400x1483.webp 2400w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-3600x2225.webp 3600w' },
+        { srcset: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-300x185.jpg 300w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-600x371.jpg 600w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-900x556.jpg 900w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-1200x742.jpg 1200w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-2400x1483.jpg 2400w, https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-3600x2225.jpg 3600w' },
+      ]}
+      sx={{ objectFit: 'cover', objectPosition: 'left' }}
+    />
+  </Story>
+</Canvas>

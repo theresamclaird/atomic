@@ -4,7 +4,7 @@ import { Accordion } from '../Accordion';
 import { Text } from '../Text';
 
 export default {
-  title: 'Atomic/AccordionGroup',
+  title: 'Components/AccordionGroup',
   component: AccordionGroup,
   argTypes: {
     sx: { table: { disable: true } },

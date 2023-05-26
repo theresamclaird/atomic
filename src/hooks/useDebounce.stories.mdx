@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/useDebounce" />
+
+# useDebounce
+
+The useDebounce hook debounces changing values.
+
+## Basic Usage
+
+```jsx
+const MyComponent = () => {
+  const [query, setQuery] = useState('');
+  const debouncedQuery = useDebounce(query, 1000);
+
+  useEffect(() => {
+    // Fetch, or do something with debouncedQuery value.
+  }, [debouncedQuery]);
+
+  return (
+    <form>
+      <input type="text" value={query} onChange={e => setQuery(e.target.value)} />
+    </form>
+  );
+};
+```

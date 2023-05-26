@@ -3,7 +3,7 @@ import { Accordion } from './Accordion';
 import { Text } from '../Text';
 
 export default {
-  title: 'Atomic/Accordion',
+  title: 'Components/Accordion',
   component: Accordion,
   argTypes: {
     sx: { table: { disable: true } },

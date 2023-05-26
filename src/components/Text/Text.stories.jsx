@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from './Text';
 
 export default {
-  title: 'Atomic/Text',
+  title: 'Components/Text',
   component: Text,
   argTypes: {
     sx: { table: { disable: true } },

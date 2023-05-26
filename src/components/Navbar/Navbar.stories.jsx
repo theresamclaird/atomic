@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { HamburgerMenu } from '../HamburgerMenu';
 
 export default {
-  title: 'Atomic/Navbar',
+  title: 'Components/Navbar',
   component: Navbar,
   argTypes: {
     sx: { table: { disable: true } },
