@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
-import { Image } from '../Image';
+import { Image, ImageSourcePropType } from '../Image';
 
 function Hero({
-  alt, src, sx, children, ...props
+  alt, src, sources, aspectRatio, sx, children, ...props
 }) {
   return (
     <Box
@@ -16,19 +16,22 @@ function Hero({
       }}
       {...props}
     >
-      <Image alt={alt} src={src} sx={{ width: '100%', objectFit: 'contain' }} />
+      <Image alt={alt} src={src} sources={sources} aspectRatio={aspectRatio} sx={{ objectFit: 'contain' }} />
       {children && <Box sx={{ p: ['small', 'medium'] }}>{children}</Box>}
     </Box>
   );
 }
 
 Hero.defaultProps = {
+  sources: [],
   sx: {},
 };
 
 Hero.propTypes = {
   alt: PropTypes.string.isRequired,
-  src: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  src: PropTypes.string.isRequired,
+  sources: PropTypes.arrayOf(ImageSourcePropType),
+  aspectRatio: PropTypes.number.isRequired,
   sx: PropTypes.objectOf(PropTypes.any),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };
