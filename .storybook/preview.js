@@ -19,7 +19,9 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Documentation', 'Components', 'Hooks',
+        'Documentation', ['Getting Started', 'Default Theme', 'Contact Me'],
+        'Components', ['Box', 'Text', 'Panel', 'Image', 'Hero', 'Accordion', 'Accordion Group', 'HamburgerMenu', 'NavBar', 'Panel'],
+        'Hooks',
       ],
     },
   },
