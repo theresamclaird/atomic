@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Box, Text } from '../components';
+
+<Meta title="Documentation/Default Theme" />
+
+# Default Theme
+
+These are a small-ish collection of styles that are available through the default theme. I update the default theme as needed.
+
+## Default/Paragraph Text
+<Canvas>
+  <Story name="Default/Paragraph Text">
+    <Text>This is the default text style.</Text>
+    <Text>This text contains an <a href="https://www.mclairdfamily.com/">inline link</a>.</Text>
+  </Story>
+</Canvas>
+
+## Headings
+<Canvas>
+  <Story name="Headings">
+    <Text as="h1">This is h1 text.</Text>
+    <Text as="h2">This is h2 text.</Text>
+    <Text as="h3">This is h3 text..</Text>
+  </Story>
+</Canvas>
+
+## Lists
+<Canvas>
+  <Story name="Unordered List">
+    <Box as="ul">
+      <Text as="li">First Bullet Point</Text>
+      <Text as="li">Second Bullet Point</Text>
+      <Text as="li">Third Bullet Point</Text>
+    </Box>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Ordered List">
+    <Box as="ol">
+      <Text as="li">First Item</Text>
+      <Text as="li">Second Item</Text>
+      <Text as="li">Third Item</Text>
+    </Box>
+  </Story>
+</Canvas>
+
+## Colors
+<Canvas>
+  <Story name="Colors">
+    <Box sx={{ p: '1rem', backgroundColor: 'background' }}>
+      <Text>background</Text>
+    </Box>
+    <Box sx={{ p: '1rem', backgroundColor: 'primary' }}>
+      <Text sx={{ color: 'white' }}>primary</Text>
+    </Box>
+    <Box sx={{ p: '1rem', backgroundColor: 'anchor' }}>
+      <Text sx={{ color: 'white' }}>anchor</Text>
+    </Box>
+    <Box sx={{ p: '1rem', backgroundColor: 'white' }}>
+      <Text>white</Text>
+    </Box>
+  </Story>
+</Canvas>
+
+## Breakpoints
+<Canvas>
+  <Story name="Breakpoints">
+    <Box sx={{ p: '1rem' }}><Text>393px</Text></Box>
+    <Box sx={{ p: '1rem' }}><Text>768px</Text></Box>
+    <Box sx={{ p: '1rem' }}><Text>1280px</Text></Box>
+  </Story>
+</Canvas>
+
+## Spacing
+<Canvas>
+  <Story name="Spacing">
+    <Box sx={{ p: '1rem' }}><Text>none: 0</Text></Box>
+    <Box sx={{ p: '1rem' }}><Text>small: 1rem</Text></Box>
+    <Box sx={{ p: '1rem' }}><Text>medium: 2rem</Text></Box>
+    <Box sx={{ p: '1rem' }}><Text>large: 3rem</Text></Box>
+  </Story>
+</Canvas>
