@@ -11,11 +11,13 @@ I make no guarantees that these are useful to anybody except myself, or that the
 
 ## Installation
 
-Installation requires GitHub authentication and an auth token, so if you really want to use or play with these components, I recommend just cloning the <a href="https://github.com/theresamclaird/atomic">repo</a>.
+I do not anticipate anybody really wanting to install or use these components; in fact, if you are looking for React components, I suggest <a href="https://mui.com/">Material UI</a> as a more fully-featured component library. For a robust library of useful hooks, I suggest <a href="https://usehooks.com/">useHooks</a>.
+
+When I created and published this package I made it private, meaning installation requires GitHub authentication and an auth token. If you really want to play with these components, I recommend just cloning the <a href="https://github.com/theresamclaird/atomic">repo</a>.
 
 ## Components
 
-These components were built with <a href="https://styled-system.com/">Styled System</a> and <a href="https://emotion.sh/docs/introduction">Emotion</a>, and they accept an optional `sx` prop for styling.
+These components are built with <a href="https://styled-system.com/">Styled System</a> and <a href="https://emotion.sh/docs/introduction">Emotion</a>. They accept the same props that typical Styled System components take, for example `as` and `sx` props.
 
 ### The `as` Prop
 
@@ -50,4 +52,4 @@ One of my favorite features of Styled System is the powerful ability to declare 
 <Box sx={{ padding: [1, 2, 3] }}>The padding in this Box will change with each breakpoint.</Box>
 ```
 
-An array of values assigned to a CSS declaration, applies those values at smallest-to-largest breakpoints. In the above example, the Box will use a padding value of 1 (rem) at the smallest breakpoint, and a padding value of 2 at the next largest breakpoint, and a value of 3 at the largest breakpoint. Read more about this in the <a href="https://styled-system.com/responsive-styles">Styled System documentation</a>.
+An array of values assigned to a CSS declaration will apply those values at smallest-to-largest breakpoints in ascending index order. In the above example, the Box will use a padding value of 1 at the smallest breakpoint, and a padding value of 2 at the next largest breakpoint, and a value of 3 at the largest breakpoint. Read more about this in the <a href="https://styled-system.com/responsive-styles">Styled System documentation</a>.

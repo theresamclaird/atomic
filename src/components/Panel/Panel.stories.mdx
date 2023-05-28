@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import Panel from './Panel';
+import { Text, Flex } from '..';
+
+<Meta title="Components/Panel" component={Panel} />
+
+# Panel
+
+The `Panel` component renders vertical boxes with consistent gutters.
+
+## Import
+
+```jsx
+import { Panel } from '@theresamclaird/atomic';
+```
+
+```jsx
+<Flex
+  sx={{
+    p: 0,
+    m: 0,
+    bg: 'background',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  }}
+>
+  <Panel>
+    <Text sx={{ p: 'small' }}>This is a panel.</Text>
+  </Panel>
+  <Panel>
+    <Text sx={{ p: 'small' }}>This is another panel.</Text>
+  </Panel>
+  <Panel>
+    <Text sx={{ p: 'small' }}>A Panel contains content and provides standardized widths and gutters.</Text>
+  </Panel>
+</Flex>
+```
+
+<Canvas>
+  <Story name="Panel">
+    <Flex
+      sx={{
+        p: 1,
+        m: 0,
+        bg: '#777',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+      }}
+    >
+      <Panel>
+        <Text sx={{ p: 'small' }}>This is a panel.</Text>
+      </Panel>
+      <Panel>
+        <Text sx={{ p: 'small' }}>This is another panel.</Text>
+      </Panel>
+      <Panel>
+        <Text sx={{ p: 'small' }}>A Panel contains content and provides standardized widths and gutters.</Text>
+      </Panel>
+    </Flex>
+  </Story>
+</Canvas>

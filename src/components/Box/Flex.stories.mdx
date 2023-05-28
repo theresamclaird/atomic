@@ -1,0 +1,95 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Flex, Box } from './Box';
+import { Text } from '../Text';
+
+<Meta title="Components/Flex" component={Flex} />
+
+# Flex
+
+The `Flex` component is just a `Box` with `display: flex` applied. While I could just apply an `sx` prop to a `Box` with `display: flex`, seeing `Flex` in code tends to stand out a bit to me that this is intended to be a flexbox layout, and it makes the code just a little easier to understand.
+
+## Import
+
+```jsx
+import { Flex } from '@theresamclaird/atomic';
+```
+
+```jsx
+<Flex>This is a div element with display: flex.</Flex>
+```
+
+<Canvas>
+  <Story name="Box">
+    <Flex>This is a div element with display: flex.</Flex>
+  </Story>
+</Canvas>
+
+## Styling
+
+```jsx
+<Flex sx={{
+  p: 1,
+  bg: 'background',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  gap: 1,
+  '> li': {
+    listItemType: 'none',
+  }.
+}}>
+  <Text>First Element</Text>
+  <Text>Second Element</Text>
+  <Text>Third Element</Text>
+</Flex>
+```
+
+<Canvas>
+  <Story name="Styling">
+  <Flex sx={{ p: 1, bg: 'background', flexDirection: 'row', justifyContent: 'space-around', gap: 1 }}>
+    <Text>First Element</Text>
+    <Text>Second Element</Text>
+    <Text>Third Element</Text>
+  </Flex>
+  </Story>
+</Canvas>
+
+## HTML Tags
+
+```jsx
+<Flex
+  as="ul"
+  sx={{
+    p: 1,
+    bg: 'background',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 1,
+    '> li': { listStyleType: 'none' },
+  }}>
+  <Text as="li">First Bullet</Text>
+  <Text as="li">Second Bullet</Text>
+  <Text as="li">Third Bullet</Text>
+  <Text as="li">Fourth Bullet</Text>
+</Flex>
+```
+
+<Canvas>
+  <Story name="HTML Tags">
+    <Flex
+      as="ul"
+      sx={{
+        m: 0,
+        p: 1,
+        bg: 'background',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 1,
+        '> li': { listStyleType: 'none' },
+      }}>
+      <Text as="li">First Bullet</Text>
+      <Text as="li">Second Bullet</Text>
+      <Text as="li">Third Bullet</Text>
+      <Text as="li">Fourth Bullet</Text>
+    </Flex>
+  </Story>
+</Canvas>

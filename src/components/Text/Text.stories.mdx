@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Box } from '../Box';
+import { Text } from './Text';
+
+<Meta title="Components/Text" component={Text} />
+
+# Text
+
+The `Text` component renders a container around text and like the `Box` it can accept both `as` and `sx` props. The `as` prop defaults to the `p` tag if not provided.
+
+## Import
+
+```jsx
+import { Text } from '@theresamclaird/atomic';
+```
+
+```jsx
+<Text>This is a themed p element.</Text>
+```
+
+<Canvas>
+  <Story name="Text">
+    <Text>This is a themed p element.</Text>
+  </Story>
+</Canvas>
+
+## Styling
+
+```jsx
+<Text sx={{ padding: '1rem', backgroundColor: '#bdb5d5' }}><Text>This text has padding and background color.</Text></Text>
+```
+
+<Canvas>
+  <Story name="Styling">
+    <Text sx={{ padding: '1rem', backgroundColor: '#bdb5d5' }}><Text>This text has padding and background color.</Text></Text>
+  </Story>
+</Canvas>
+
+## HTML Tags
+
+```jsx
+<Box as="ul">
+  <Text as="li">First Bullet</Text>
+  <Text as="li">Second Bullet</Text>
+  <Text as="li">Third Bullet</Text>
+  <Text as="li">
+        <Text as="a" href="https://www.mclairdfamily.com/">This is a link.</Text>
+        Note the <Text as="span" sx={{ fontWeight: '900' }}>as</Text> and <Text as="span" sx={{ fontWeight: '900' }}>href</Text> props on the anchor.
+  </Text>
+</Box>
+```
+
+<Canvas>
+  <Story name="HTML Tags">
+    <Box as="ul">
+      <Text as="li">First Bullet</Text>
+      <Text as="li">Second Bullet</Text>
+      <Text as="li">Third Bullet</Text>
+      <Text as="li">
+        <Text as="a" href="https://www.mclairdfamily.com/">This is a link.</Text>
+        Note the <Text as="span" sx={{ fontWeight: '900' }}>as</Text> and <Text as="span" sx={{ fontWeight: '900' }}>href</Text> props on the anchor.
+      </Text>
+    </Box>
+  </Story>
+</Canvas>
