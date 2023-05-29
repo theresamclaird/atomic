@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Flex } from '../Box';
 import { PlayingCard } from './PlayingCard';
-import { getDeck } from '../../utils/deck';
+import { getDeck } from '../../modules/deck';
 
 export default {
   title: 'Components/PlayingCard/Deck',

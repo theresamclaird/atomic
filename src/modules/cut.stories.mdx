@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Modules/cut()" />
+
+# cut()
+
+The `cut()` function accepts an array of cards and a percentage representing the portion of the array to cut. It returns the array of cards sliced at the location specified by the percentage argument.
+
+## Use
+
+```jsx
+import { getDeck, cut } from '@theresamclaird/atomic';
+
+const deck = getDeck();
+const cutCards = cut(deck, Math.random() * 100);
+```
+
