@@ -1,0 +1,53 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Box, Flex } from '../Box';
+import { Text } from '../Text';
+import { PlayingCard } from './PlayingCard';
+import AceOfSpades from './AceOfSpades';
+
+<Meta title="Components/PlayingCard" component={PlayingCard} />
+
+# PlayingCard
+
+Renders a standard playing card. Cards are rendered with pure HTML and CSS, except for the face cards (Jack, Queen, King) which are rendered from SVG images.
+
+## Import
+
+```jsx
+import { PlayingCard } from '@theresamclaird/atomic';
+```
+
+## Playing Card
+
+```jsx
+<PlayingCard
+  color="#000"
+  suit="spades"
+  label="A"
+  pip="♠"
+  value={1}
+/>
+```
+
+<Canvas>
+  <Story name="Playing Card">
+      <Flex
+      sx={{
+        flexWrap: 'wrap',
+        gap: '1rem',
+      }}
+    >
+      <AceOfSpades />
+    </Flex>
+  </Story>
+</Canvas>
+
+## Required Props
+
+<Box as="ul">
+  <Text as="li">color: CSS color code associated with the suit.</Text>
+  <Text as="li">suit: string representing the suit. (Must be one of "spades", "hearts", "clubs", or "diamonds")</Text>
+  <Text as="li">label: A number or letter representing the card (e.g. "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K").</Text>
+  <Text as="li">pip: symbol representing the suit (e.g. "♠", "♥", "♣", "♦").</Text>
+  <Text as="li">value: number representing the value of the card (e.g. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).</Text>
+</Box>
