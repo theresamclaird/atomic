@@ -14,20 +14,23 @@ The `Panel` component renders vertical boxes with consistent gutters.
 import { Panel } from '@theresamclaird/atomic';
 ```
 
-## Simple Panel
+## Usage
 
 ```jsx
+<Panel>
+  <Text sx={{ p: 'small' }}>This is a panel.</Text>
+</Panel>
 ```
 
-<Canvas>
-  <Story name="Simple Panel">
+<Canvas style={{ background: '#777' }}>
+  <Story name="Usage">
     <Panel>
       <Text sx={{ p: 'small' }}>This is a panel.</Text>
     </Panel>
   </Story>
 </Canvas>
 
-## Stacked Panels
+### Stacked
 
 ```jsx
 <Flex

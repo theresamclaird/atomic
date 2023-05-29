@@ -6,7 +6,7 @@ function AccordionGroup({
   reducer, children, expandSymbol, collapseSymbol, ...props
 }) {
   const childArray = Children.toArray(children);
-  const [state, dispatch] = useReducer(reducer, childArray.map((child) => !!child.expanded));
+  const [state, dispatch] = useReducer(reducer, childArray.map(() => false));
 
   return (
     <Box {...props}>

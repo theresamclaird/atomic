@@ -1,32 +1,52 @@
-import { Fragment } from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Box, Flex } from '../Box';
 import { Text } from '../Text';
 import { PlayingCard } from './PlayingCard';
+import { PlayingCardBack } from './PlayingCardBack';
 import AceOfSpades from './AceOfSpades';
 
 <Meta title="Components/PlayingCard" component={PlayingCard} />
 
-# PlayingCard
+# PlayingCard, PlayingCardBack
 
 Renders a standard playing card. Card pips and corners are rendered with HTML and CSS, except for the royal faces (Jack, Queen, King) which are rendered from SVG images. I used these to build a <a href="https://main.d1s1mgbx0jg3t8.amplifyapp.com/" target="_blank">Blackjack</a> game.
 
 ## Import
 
 ```jsx
-import { PlayingCard } from '@theresamclaird/atomic';
+import { PlayingCard, PlayingCardBack } from '@theresamclaird/atomic';
 ```
 
-## Playing Card
+## Required Props
+
+The following are required props for the `PlayingCard` component. The `PlayingCardBack` component requires no props.
+
+<Box as="ul">
+  <Text as="li">color: CSS color code associated with the suit.</Text>
+  <Text as="li">suit: string representing the suit. (Must be one of "spades", "hearts", "clubs", or "diamonds")</Text>
+  <Text as="li">label: A number or letter representing the card (e.g. "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K").</Text>
+  <Text as="li">pip: symbol representing the suit (e.g. "♠", "♥", "♣", "♦").</Text>
+  <Text as="li">value: number representing the value of the card (e.g. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).</Text>
+</Box>
+
+## Usage
 
 ```jsx
-<PlayingCard
-  color="#000"
-  suit="spades"
-  label="A"
-  pip="♠"
-  value={1}
-/>
+<Flex
+sx={{
+  flexWrap: 'wrap',
+  gap: '1rem',
+}}
+>
+  <PlayingCard
+    color="#000"
+    suit="spades"
+    label="A"
+    pip="♠"
+    value={1}
+  />
+  <PlayingCardBack />
+</Flex>
 ```
 
 <Canvas>
@@ -38,16 +58,7 @@ import { PlayingCard } from '@theresamclaird/atomic';
       }}
     >
       <AceOfSpades />
+      <PlayingCardBack />
     </Flex>
   </Story>
 </Canvas>
-
-## Required Props
-
-<Box as="ul">
-  <Text as="li">color: CSS color code associated with the suit.</Text>
-  <Text as="li">suit: string representing the suit. (Must be one of "spades", "hearts", "clubs", or "diamonds")</Text>
-  <Text as="li">label: A number or letter representing the card (e.g. "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K").</Text>
-  <Text as="li">pip: symbol representing the suit (e.g. "♠", "♥", "♣", "♦").</Text>
-  <Text as="li">value: number representing the value of the card (e.g. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).</Text>
-</Box>

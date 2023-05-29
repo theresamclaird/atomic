@@ -1,11 +1,28 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Image } from './Image';
 
 <Meta title="Components/Image" component={Image} />
 
 # Image
 
-## Simple Image
+Renders a responsive image that is rendered with `picture`, `source`, and `img` tags.
+
+## Import
+
+```jsx
+import { Image } from '@theresamclaird/atomic';
+```
+
+## Required Props
+
+<Box as="ul">
+  <Text as="li">alt: Alt text associated with the image.</Text>
+  <Text as="li">src: Image source, or, when the optional sources prop is supplied, src is the fallback image.</Text>
+</Box>
+
+## Usage
 
 ```jsx
 <Image
@@ -24,6 +41,19 @@ import { Image } from './Image';
 </Canvas>
 
 ## Responsive Image
+
+Supply a `sources` prop consisting of an array of objects indicating image types and sizes. When `sources` is provided, the `src` prop is still required and will be used as a fallback.
+
+Each source object in the `sources` array can have `media` (optional) and `srcset` properties:
+
+```json
+{
+  "media": "(max-width: 900px)",
+  "srcset": "https://mclairdfamily-images.s3.us-west-2.amazonaws.com/demo-900x556.webp"
+}
+```
+
+
 
 ```jsx
 <Image
