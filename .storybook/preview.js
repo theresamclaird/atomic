@@ -20,7 +20,7 @@ export const parameters = {
     storySort: {
       order: [
         'Documentation', ['Getting Started', 'Default Theme', 'Contact Me'],
-        'Components', ['Box', 'Flex', 'Text', 'Panel', 'Image', 'Hero', 'Accordion', 'Accordion Group', 'HamburgerMenu', 'NavBar', 'Panel'],
+        'Components', ['Box', 'Flex', 'Text', 'PlayingCard', 'Panel', 'Image', 'Hero', 'Accordion', 'Accordion Group', 'HamburgerMenu', 'NavBar', 'Panel'],
         'Hooks',
       ],
     },
