@@ -19,7 +19,7 @@ function HamburgerMenu({ sx, children, ...props }) {
             position: 'absolute',
             top: '1rem',
             left: '1rem',
-            zIndex: 2,
+            zIndex: 200,
             flexDirection: 'column',
             backgroundColor: '#fff',
             m: 0,
@@ -48,7 +48,7 @@ function HamburgerMenu({ sx, children, ...props }) {
           left: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: '1',
+          zIndex: 100,
         }}
       />
     </>

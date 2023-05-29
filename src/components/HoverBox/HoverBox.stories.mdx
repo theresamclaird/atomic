@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { HoverBox } from './HoverBox';
+import { Box } from '../Box';
+import { Text } from '../Text';
+
+<Meta title="Components/HoverBox" component={HoverBox} />
+
+# HoverBox
+
+Simple abstraction to render a `Box` according to a hover state passed in a render prop (children).
+
+## Import
+
+```jsx
+import { HoverBox } from '@theresamclaird/atomic';
+```
+
+## Usage
+
+```jsx
+<HoverBox>
+  {(mouseEntered) => (
+    <Box sx={{ p: 'small', bg: mouseEntered ? '#f00' : 'unset' }}>
+      <Text>This text will change the background color to red on hover.</Text>
+    </Box>
+  )}
+</HoverBox>
+```
+
+<Canvas>
+  <Story name="Usage">
+    <HoverBox>
+      {(mouseEntered) => (
+        <Box sx={{ p: 'small', bg: mouseEntered ? '#f00' : 'unset' }}>
+          <Text>This text will change the background color to red on hover.</Text>
+        </Box>
+      )}
+    </HoverBox>
+  </Story>
+</Canvas>
