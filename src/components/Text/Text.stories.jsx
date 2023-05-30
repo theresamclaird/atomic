@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from '../Box';
 import { Text } from './Text';
 
 export default {
@@ -27,13 +28,17 @@ StyledText.args = {
   },
 };
 
-function AnchorTemplate(args) {
-  return <Text {...args}>This is an Anchor.</Text>;
+function OrderedListTemplate(args) {
+  return (
+    <Box as="ol">
+      <Text {...args}>First Bullet</Text>
+      <Text {...args}>Second Bullet</Text>
+      <Text {...args}>Third Bullet</Text>
+    </Box>
+  );
 }
 
-export const AnchorText = AnchorTemplate.bind({});
-AnchorText.args = {
-  as: 'a',
-  href: 'https://www.atomiccomponentlibrary.com/',
-  target: '_blank',
+export const OrderedList = OrderedListTemplate.bind({});
+OrderedList.args = {
+  as: 'li',
 };

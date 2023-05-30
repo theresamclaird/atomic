@@ -1,0 +1,18 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './Anchor.stories';
+
+<Meta of={Stories} />
+
+# Anchor
+
+The Anchor component renders an anchor tag around text, and requires an `href` prop.
+
+## Default Anchor
+
+<Canvas of={Stories.Default} />
+
+## Styled Anchor
+
+Use the optional `sx` prop for styling.
+
+<Canvas of={Stories.StyledAnchor} />

@@ -4,6 +4,7 @@ import visualizer from 'rollup-plugin-visualizer';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import image from '@rollup/plugin-image';
 
 export default [
   {
@@ -24,12 +25,13 @@ export default [
     plugins: [
       cleaner({ targets: ['./dist/'] }),
       commonjs(),
+      image(),
       babel({
         configFile: './babel.config.json',
         babelHelpers: 'runtime',
       }),
       nodeResolve({
-        extensions: ['.js', '.jsx', '.mjs', '.json'],
+        extensions: ['.js', '.jsx', '.mjs', '.json', 'svg'],
       }),
       visualizer({ open: false, gzipSize: true }),
       json(),

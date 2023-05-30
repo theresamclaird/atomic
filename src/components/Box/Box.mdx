@@ -9,30 +9,30 @@ The Box is the most foundational component in the library, and is used to render
 
 ## Default Box
 
-The Box renders a `div` by default, which can be changed with the `as` prop described below.
+It renders a `div` tag by default.
 
 <Canvas of={Stories.Default} />
 
 ## Styling
 
-Use the `sx` prop to provide styling.
+Provide an `sx` prop for styling.
 
 <Canvas of={Stories.StyledBox} />
 
-## HTML Tags
+## HTML Tag Declaration
 
-Use the `as` prop to declare the HTML tag used to render the Box.
+Provide an `as` prop to declare the HTML tag used to render the Box.
 
 <Canvas of={Stories.UnorderedList} />
 
 ## Flex
 
-The Flex component is just a Box with `display: flex` applied. Yes, you could just declare a Box with `sx={{ display: 'flex' }}` but I find that having a component labeled "Flex" helps to identify it as being used for layout.
+The Flex component assigns `display: flex` to a Box.
 
 <Canvas of={Stories.FlexBox} />
 
 ## Grid
 
-Similar to the Flex component, the Grid component assigns `display: grid` to a Box.
+The Grid component assigns `display: grid` to a Box.
 
 <Canvas of={Stories.GridBox} />
