@@ -27,8 +27,12 @@ StyledText.args = {
   },
 };
 
-export const SpanText = TextTemplate.bind({});
-SpanText.args = {
+function AnchorTemplate(args) {
+  return <Text {...args}>This is an Anchor.</Text>;
+}
+
+export const AnchorText = AnchorTemplate.bind({});
+AnchorText.args = {
   as: 'a',
   href: 'https://www.atomiccomponentlibrary.com/',
   target: '_blank',
