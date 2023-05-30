@@ -1,0 +1,36 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './Box.stories';
+
+<Meta of={Stories} />
+
+# Box
+
+The Box is the most foundational component in the library, and is used to render themeable HTML tags.
+
+## Usage
+
+<Canvas of={Stories.Example} />
+
+## Styling
+
+Use the `sx` prop to provide styling.
+
+<Canvas of={Stories.StyledBox} />
+
+## HTML Tags
+
+Use the `as` prop to declare the HTML tag used to render the Box.
+
+<Canvas of={Stories.UnorderedList} />
+
+## Flex
+
+The Flex component is just a Box with `display: flex` applied. Yes, you could just declare a Box with `sx={{ display: 'flex' }}` but I find that having a component labeled "Flex" helps to identify it as being used for layout.
+
+<Canvas of={Stories.FlexBox} />
+
+## Grid
+
+Similar to the Flex component, the Grid component assigns `display: grid` to a Box.
+
+<Canvas of={Stories.GridBox} />

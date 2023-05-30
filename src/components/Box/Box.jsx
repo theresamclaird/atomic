@@ -40,4 +40,9 @@ Box.displayName = 'Box';
 const Flex = styled(Box)({ display: 'flex' });
 Flex.displayName = 'Flex';
 
-export { Box, Flex, Box as default };
+const Grid = styled(Box)({ display: 'grid' });
+Grid.displayName = 'Grid';
+
+export {
+  Box, Flex, Grid, Box as default,
+};
