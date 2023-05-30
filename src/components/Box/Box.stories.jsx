@@ -14,8 +14,8 @@ function BoxTemplate(args) {
   return <Box {...args} />;
 }
 
-export const Example = BoxTemplate.bind({});
-Example.args = {
+export const Default = BoxTemplate.bind({});
+Default.args = {
   children: <Text>This is a default Box.</Text>,
 };
 
