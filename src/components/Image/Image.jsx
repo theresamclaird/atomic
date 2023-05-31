@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 
 function Image({
-  alt, src, sources, aspectRatio, sx, containerSx, ...props
+  alt, src, sources, aspectRatio, sx, ...props
 }) {
   if (aspectRatio !== 0) {
     return (
@@ -19,7 +19,6 @@ function Image({
             width: '100%',
             paddingBottom: `${100 / aspectRatio}%`,
           },
-          ...sx,
         }}
       >
         <Box as="picture">
@@ -33,7 +32,7 @@ function Image({
             alt={alt}
             src={src}
             sx={{
-              position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+              position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', ...sx,
             }}
             {...props}
           />
@@ -66,7 +65,6 @@ Image.defaultProps = {
   sources: [],
   aspectRatio: 0,
   sx: {},
-  containerSx: {},
 };
 
 const ImageSourcePropType = PropTypes.shape({
@@ -79,7 +77,6 @@ Image.propTypes = {
   sources: PropTypes.arrayOf(ImageSourcePropType),
   aspectRatio: PropTypes.number,
   sx: PropTypes.objectOf(PropTypes.any),
-  containerSx: PropTypes.objectOf(PropTypes.any),
 };
 
 export { Image, Image as default, ImageSourcePropType };

@@ -33,10 +33,7 @@ AspectRatioImage.args = {
   ...ResponsiveImage.args,
   aspectRatio: 1,
   sx: {
-    width: '300px',
-    '& img': {
-      objectFit: 'cover',
-      objectPosition: '20%',
-    },
+    objectFit: 'cover',
+    objectPosition: '20%',
   },
 };

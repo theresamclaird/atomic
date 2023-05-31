@@ -12,16 +12,12 @@ Renders a responsive image with `picture`, `source`, and `img` tags.
 
 ## Responsive Image
 
-Supply an optional `sources` prop consisting of an array of objects with `media` (optional) and `srcset` values. When `sources` is provided, the `src` prop is still required and will be used as a fallback.
-
 <Canvas of={Stories.ResponsiveImage} />
 <Controls of={Stories.ResponsiveImage} />
 
 ## Aspect Ratio Image
 
-To prevent content shift after the image loads, an optional aspectRatio prop will wrap the image in a container taking up 100% of the available width and vertical space according to the supplied aspectRatio.
-
-A level of art direction can be achieved with the sx prop, for example declaring object-fit and object-position on the image.
+Supplying an optional `aspectRatio` prop will wrap the image in a containing Box. This also preserves space for the image as it loads, preventing content shift.
 
 <Canvas of={Stories.AspectRatioImage} />
 <Controls of={Stories.AspectRatioImage} />
