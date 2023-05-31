@@ -5,14 +5,14 @@ import * as Stories from './Image.stories';
 
 # Image
 
-Renders a responsive image that is rendered with `picture`, `source`, and `img` tags. The `alt` and `src` props are required.
+Renders a responsive image with `picture`, `source`, and `img` tags.
 
 <Canvas of={Stories.Default} />
 <Controls of={Stories.Default} />
 
 ## Responsive Image
 
-Supply a sources prop consisting of an array of objects indicating image types and sizes. When sources is provided, the src prop is still required and will be used as a fallback.
+Supply an optional `sources` prop consisting of an array of objects with `media` (optional) and `srcset` values. When `sources` is provided, the `src` prop is still required and will be used as a fallback.
 
 <Canvas of={Stories.ResponsiveImage} />
 <Controls of={Stories.ResponsiveImage} />
