@@ -1,0 +1,11 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+import * as Stories from './Hero.stories';
+
+<Meta of={Stories} />
+
+# Hero
+
+The Hero component renders a responsive image above content related to the image.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />

@@ -1,0 +1,27 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+import * as Stories from './Image.stories';
+
+<Meta of={Stories} />
+
+# Image
+
+Renders a responsive image that is rendered with `picture`, `source`, and `img` tags. The `alt` and `src` props are required.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Responsive Image
+
+Supply a sources prop consisting of an array of objects indicating image types and sizes. When sources is provided, the src prop is still required and will be used as a fallback.
+
+<Canvas of={Stories.ResponsiveImage} />
+<Controls of={Stories.ResponsiveImage} />
+
+## Aspect Ratio Image
+
+To prevent content shift after the image loads, an optional aspectRatio prop will wrap the image in a container taking up 100% of the available width and vertical space according to the supplied aspectRatio.
+
+A level of art direction can be achieved with the sx prop, for example declaring object-fit and object-position on the image.
+
+<Canvas of={Stories.AspectRatioImage} />
+<Controls of={Stories.AspectRatioImage} />

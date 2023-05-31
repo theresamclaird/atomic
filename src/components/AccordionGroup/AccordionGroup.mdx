@@ -1,0 +1,11 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+import * as Stories from './AccordionGroup.stories';
+
+<Meta of={Stories} />
+
+# AccordionGroup
+
+The AccordionGroup integrates one or more Accordion components. Supply a `reducer` prop to control behavior.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />

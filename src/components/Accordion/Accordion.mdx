@@ -1,0 +1,11 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+import * as Stories from './Accordion.stories';
+
+<Meta of={Stories} />
+
+# Accordion
+
+The Accordion shows and hides content when the user clicks on the label.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />

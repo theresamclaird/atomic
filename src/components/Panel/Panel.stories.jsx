@@ -10,15 +10,6 @@ export default {
   },
 };
 
-function BoxTemplate(args) {
-  return <Panel {...args} />;
-}
-
-export const Default = BoxTemplate.bind({});
-Default.args = {
-  children: <Text>This is a default Panel.</Text>,
-};
-
 function PageTemplate(args) {
   return (
     <Flex
