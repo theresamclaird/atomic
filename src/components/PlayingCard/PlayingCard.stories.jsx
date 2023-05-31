@@ -6,7 +6,7 @@ import { getDeck } from '../../modules/deck';
 import { queenHearts } from '../../images';
 
 export default {
-  title: 'Components/Playing Card',
+  title: 'Components/PlayingCard',
   component: PlayingCard,
   argTypes: {
     sx: { table: { disable: true } },
