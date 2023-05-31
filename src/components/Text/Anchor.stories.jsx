@@ -30,6 +30,8 @@ export const StyledAnchor = AnchorTemplate.bind({});
 StyledAnchor.args = {
   ...Default.args,
   sx: {
+    backgroundColor: '#bdb5d5',
+    color: '#000',
     ':hover': {
       backgroundColor: '#609',
       color: '#fff',

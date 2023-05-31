@@ -37,12 +37,6 @@ const Box = styled('div', {
 );
 Box.displayName = 'Box';
 
-const Flex = styled(Box)({ display: 'flex' });
-Flex.displayName = 'Flex';
-
-const Grid = styled(Box)({ display: 'grid' });
-Grid.displayName = 'Grid';
-
 export {
-  Box, Flex, Grid, Box as default,
+  Box, Box as default,
 };

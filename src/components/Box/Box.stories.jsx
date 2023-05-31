@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Grid } from './Box';
+import { Box } from './Box';
 import { Text } from '..';
 
 export default {
@@ -39,58 +39,4 @@ UnorderedList.args = {
     <Text as="li">Second Bullet</Text>,
   ],
   as: 'ul',
-};
-
-function FlexTemplate(args) {
-  return (
-    <Flex {...args}>
-      <Text>First Element</Text>
-      <Text>Second Element</Text>
-      <Text>Third Element</Text>
-    </Flex>
-  );
-}
-
-export const FlexBox = FlexTemplate.bind({});
-FlexBox.args = {
-  sx: {
-    margin: '1rem',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: '1rem',
-    '> p': {
-      backgroundColor: '#609',
-      color: '#fff',
-      borderRadius: '0.5rem',
-      padding: '3rem',
-    },
-  },
-};
-
-function GridTemplate(args) {
-  return (
-    <Grid {...args}>
-      <Text>First Element</Text>
-      <Text>Second Element</Text>
-      <Text>Third Element</Text>
-      <Text>Fourth Element</Text>
-      <Text>Fifth Element</Text>
-      <Text>Sixth Element</Text>
-    </Grid>
-  );
-}
-
-export const GridBox = GridTemplate.bind({});
-GridBox.args = {
-  sx: {
-    margin: '1rem',
-    gridTemplateColumns: '10rem 10rem 10rem',
-    gridGap: '1rem',
-    '> p': {
-      backgroundColor: '#609',
-      color: '#fff',
-      borderRadius: '0.5rem',
-      padding: '3rem',
-    },
-  },
 };

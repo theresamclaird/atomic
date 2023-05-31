@@ -1,0 +1,13 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+import * as Stories from './Grid.stories';
+
+<Meta of={Stories} />
+
+# Grid
+
+Grid is just a Box with `display: grid` applied, and some conveniency props that are specific to CSS Grid.
+
+## Example
+
+<Canvas of={Stories.GridBox} />
+<Controls of={Stories.GridBox} />
