@@ -5,12 +5,13 @@ import { Flex } from '../Box';
 function Pip({ symbol, sx, ...props }) {
   return (
     <Flex
+      justify="center"
+      align="center"
+      gap={0}
       sx={{
         m: 0,
         p: 0,
-        fontSize: '1.3rem',
-        justifyContent: 'center',
-        alignItems: 'center',
+        fontSize: '2rem',
         ...sx,
       }}
       {...props}

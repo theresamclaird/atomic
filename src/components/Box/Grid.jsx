@@ -30,14 +30,14 @@ Grid.displayName = 'Grid';
 Grid.defaultProps = {
   columns: '',
   rows: '',
-  gap: '1rem',
+  gap: 0,
   sx: {},
 };
 
 Grid.propTypes = {
   columns: PropTypes.string,
   rows: PropTypes.string,
-  gap: PropTypes.string,
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   sx: PropTypes.objectOf(PropTypes.any),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };

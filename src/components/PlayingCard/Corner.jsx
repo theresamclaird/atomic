@@ -4,16 +4,18 @@ import { Box, Flex } from '../Box';
 
 function Corner({ sx, label, pip }) {
   return (
-    <Flex sx={{
-      position: 'absolute',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      fontSize: '0.7rem',
-      lineHeight: '0.7rem',
-      '&::after': { content: `"${pip}"` },
-      ...sx,
-    }}
+    <Flex
+      direction="column"
+      justify="center"
+      align="center"
+      gap={0}
+      sx={{
+        position: 'absolute',
+        p: 0,
+        m: 0,
+        '&::after': { content: `"${pip}"` },
+        ...sx,
+      }}
     >
       <Box>{label}</Box>
     </Flex>

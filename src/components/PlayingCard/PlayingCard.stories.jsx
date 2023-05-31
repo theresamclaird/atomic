@@ -3,6 +3,7 @@ import { PlayingCard } from './PlayingCard';
 import { PlayingCardBack } from './PlayingCardBack';
 import { Flex } from '../Box';
 import { getDeck } from '../../modules/deck';
+import { queenHearts } from '../../images';
 
 export default {
   title: 'Components/Playing Card',
@@ -14,7 +15,7 @@ export default {
 
 function PlayingCardTemplate(args) {
   return (
-    <PlayingCard {...args} sx={{ display: 'inline-block' }} />
+    <PlayingCard {...args} />
   );
 }
 
@@ -27,8 +28,18 @@ Front.args = {
   value: 1,
 };
 
+export const Face = PlayingCardTemplate.bind({});
+Face.args = {
+  color: '#f00',
+  suit: 'hearts',
+  label: 'Q',
+  pip: '♥',
+  value: 10,
+  face: queenHearts,
+};
+
 function PlayingCardBackTemplate(args) {
-  return <PlayingCardBack {...args} sx={{ display: 'inline-block' }} />;
+  return <PlayingCardBack {...args} />;
 }
 
 export const Back = PlayingCardBackTemplate.bind({});

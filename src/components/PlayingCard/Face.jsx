@@ -9,8 +9,8 @@ function Face({
 }) {
   const top = '0.9rem';
   const bottom = '0.9rem';
-  const left = '1.2rem';
-  const right = '1.2rem';
+  const left = '1.5rem';
+  const right = '1.5rem';
 
   const topPipStyle = {
     J: {
@@ -79,13 +79,13 @@ function Face({
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1rem', position: 'absolute', color, ...topPipStyle,
+          fontSize: '1.5rem', position: 'absolute', color, ...topPipStyle,
         }}
       />
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1rem', position: 'absolute', color, transform: 'rotate(180deg)', ...bottomPipStyle,
+          fontSize: '1.5rem', position: 'absolute', color, transform: 'rotate(180deg)', ...bottomPipStyle,
         }}
       />
     </>

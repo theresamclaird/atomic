@@ -44,7 +44,7 @@ Flex.propTypes = {
   wrap: PropTypes.string,
   justify: PropTypes.string,
   align: PropTypes.string,
-  gap: PropTypes.string,
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   sx: PropTypes.objectOf(PropTypes.any),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
 };
