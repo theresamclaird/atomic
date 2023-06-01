@@ -14,10 +14,10 @@ const buttonCss = {
 };
 
 const nextPrevButtonCss = {
+  ...buttonCss,
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',
-  ...buttonCss,
   backgroundColor: '#fff',
   borderRadius: '50%',
   opacity: 0.5,
@@ -26,7 +26,7 @@ const nextPrevButtonCss = {
   paddingBottom: '0.3rem',
 };
 
-function Carousel({ aspectRatio, images }) {
+function Carousel({ images }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const incrementImageIndex = () => {
@@ -39,9 +39,9 @@ function Carousel({ aspectRatio, images }) {
   };
 
   return (
-    <Flex direction="column" justify="center">
-      <Box>
-        <Image aspectRatio={aspectRatio} {...images[imageIndex]} />
+    <Flex direction="column" justify="center" align="center">
+      <Box sx={{ position: 'relative' }}>
+        <Image {...images[imageIndex]} />
         <Button
           sx={{
             ...nextPrevButtonCss,
@@ -73,7 +73,6 @@ function Carousel({ aspectRatio, images }) {
 }
 
 Carousel.propTypes = {
-  aspectRatio: PropTypes.number.isRequired,
   images: PropTypes.arrayOf(PropTypes.shape({
     alt: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,

@@ -15,7 +15,6 @@ function Template(args) {
 
 export const Default = Template.bind({});
 Default.args = {
-  aspectRatio: 1.618,
   images: [
     {
       alt: 'Seattle Japanese Garden',

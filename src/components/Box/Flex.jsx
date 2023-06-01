@@ -19,6 +19,7 @@ function Flex({
         flexDirection,
         flexWrap,
         justifyContent,
+        alignItems,
         gap,
         ...sx,
       }}
