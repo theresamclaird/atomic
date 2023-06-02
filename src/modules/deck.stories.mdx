@@ -4,14 +4,427 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 
 # getDeck()
 
-The `getDeck()` function returns an entire deck of standard playing cards as an array of card objects.
-
-## Use
-
-```jsx
-import { getDeck } from '@theresamclaird/atomic';
-
+```js
 const deck = getDeck();
-
 ```
 
+```js
+[
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "A",
+        "pip": "♠",
+        "value": 1
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "2",
+        "pip": "♠",
+        "value": 2
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "3",
+        "pip": "♠",
+        "value": 3
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "4",
+        "pip": "♠",
+        "value": 4
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "5",
+        "pip": "♠",
+        "value": 5
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "6",
+        "pip": "♠",
+        "value": 6
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "7",
+        "pip": "♠",
+        "value": 7
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "8",
+        "pip": "♠",
+        "value": 8
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "9",
+        "pip": "♠",
+        "value": 9
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": null,
+        "label": "10",
+        "pip": "♠",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": "static/media/src/images/jack-spades.svg",
+        "label": "J",
+        "pip": "♠",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": "static/media/src/images/queen-spades.svg",
+        "label": "Q",
+        "pip": "♠",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "spades",
+        "face": "static/media/src/images/king-spades.svg",
+        "label": "K",
+        "pip": "♠",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "A",
+        "pip": "♥",
+        "value": 1
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "2",
+        "pip": "♥",
+        "value": 2
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "3",
+        "pip": "♥",
+        "value": 3
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "4",
+        "pip": "♥",
+        "value": 4
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "5",
+        "pip": "♥",
+        "value": 5
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "6",
+        "pip": "♥",
+        "value": 6
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "7",
+        "pip": "♥",
+        "value": 7
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "8",
+        "pip": "♥",
+        "value": 8
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "9",
+        "pip": "♥",
+        "value": 9
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": null,
+        "label": "10",
+        "pip": "♥",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": "static/media/src/images/jack-hearts.svg",
+        "label": "J",
+        "pip": "♥",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": "static/media/src/images/queen-hearts.svg",
+        "label": "Q",
+        "pip": "♥",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "hearts",
+        "face": "static/media/src/images/king-hearts.svg",
+        "label": "K",
+        "pip": "♥",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "A",
+        "pip": "♣",
+        "value": 1
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "2",
+        "pip": "♣",
+        "value": 2
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "3",
+        "pip": "♣",
+        "value": 3
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "4",
+        "pip": "♣",
+        "value": 4
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "5",
+        "pip": "♣",
+        "value": 5
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "6",
+        "pip": "♣",
+        "value": 6
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "7",
+        "pip": "♣",
+        "value": 7
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "8",
+        "pip": "♣",
+        "value": 8
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "9",
+        "pip": "♣",
+        "value": 9
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": null,
+        "label": "10",
+        "pip": "♣",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": "static/media/src/images/jack-clubs.svg",
+        "label": "J",
+        "pip": "♣",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": "static/media/src/images/queen-clubs.svg",
+        "label": "Q",
+        "pip": "♣",
+        "value": 10
+    },
+    {
+        "color": "#000",
+        "suit": "clubs",
+        "face": "static/media/src/images/king-clubs.svg",
+        "label": "K",
+        "pip": "♣",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "A",
+        "pip": "♦",
+        "value": 1
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "2",
+        "pip": "♦",
+        "value": 2
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "3",
+        "pip": "♦",
+        "value": 3
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "4",
+        "pip": "♦",
+        "value": 4
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "5",
+        "pip": "♦",
+        "value": 5
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "6",
+        "pip": "♦",
+        "value": 6
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "7",
+        "pip": "♦",
+        "value": 7
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "8",
+        "pip": "♦",
+        "value": 8
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "9",
+        "pip": "♦",
+        "value": 9
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": null,
+        "label": "10",
+        "pip": "♦",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": "static/media/src/images/jack-diamonds.svg",
+        "label": "J",
+        "pip": "♦",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": "static/media/src/images/queen-diamonds.svg",
+        "label": "Q",
+        "pip": "♦",
+        "value": 10
+    },
+    {
+        "color": "#f00",
+        "suit": "diamonds",
+        "face": "static/media/src/images/king-diamonds.svg",
+        "label": "K",
+        "pip": "♦",
+        "value": 10
+    }
+]
+```

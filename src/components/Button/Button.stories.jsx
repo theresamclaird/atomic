@@ -15,5 +15,8 @@ function Template(args) {
 
 export const Example = Template.bind({});
 Example.args = {
+  onClick: () => {
+    global.alert('Button Clicked');
+  },
   label: 'Click Me',
 };

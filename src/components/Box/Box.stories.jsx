@@ -38,6 +38,7 @@ function ListTemplate(args) {
     <Box {...args}>
       <Text as="li">First Bullet</Text>
       <Text as="li">Second Bullet</Text>
+      <Text as="li">Third Bullet</Text>
     </Box>
   );
 }
