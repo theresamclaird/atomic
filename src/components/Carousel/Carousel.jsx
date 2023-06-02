@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
+import { nanoid } from 'nanoid';
 import {
   Box, Flex, Image, Button,
 } from '..';
@@ -62,10 +63,10 @@ function Carousel({ images }) {
       <Flex direction="row" justify="center" align="center" gap={1} sx={{ mb: 1 }}>
         {images.map((image, index) => {
           if (index === imageIndex) {
-            return (<Button label="●" disabled sx={buttonCss} />);
+            return (<Button key={nanoid()} label="●" disabled sx={buttonCss} />);
           }
 
-          return (<Button label="○" sx={buttonCss} onClick={() => setImageIndex(index)} />);
+          return (<Button key={nanoid()} label="○" sx={buttonCss} onClick={() => setImageIndex(index)} />);
         })}
       </Flex>
     </Flex>

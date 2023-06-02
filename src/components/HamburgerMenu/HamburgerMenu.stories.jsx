@@ -13,19 +13,19 @@ export default {
 
 function Template(args) {
   return (
-    <Box sx={{ height: '300px', backgroundColor: 'background' }}>
+    <Box sx={{ height: '300px' }}>
       <HamburgerMenu {...args}>
-        <Text as="a" href="#">McLaird Family</Text>
-        <Text as="a" href="#">Theresa</Text>
-        <Text as="a" href="#">Dana</Text>
+        <Text as="a" href="#">Menu Link 1</Text>
+        <Text as="a" href="#">Menu Link 2</Text>
+        <Text as="a" href="#">Menu Link 3</Text>
         <Box
           sx={{
             width: '100%', m: 0, p: 0, borderTop: 'solid 1px #ddd',
           }}
         />
-        <Text as="a" href="#">Photography</Text>
-        <Text as="a" href="#">Amateur Radio Log</Text>
-        <Text as="a" href="#">Atomic Component Library</Text>
+        <Text as="a" href="#">Menu Link 4</Text>
+        <Text as="a" href="#">Menu Link 5</Text>
+        <Text as="a" href="#">Menu Link 6</Text>
       </HamburgerMenu>
     </Box>
   );
