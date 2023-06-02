@@ -47,8 +47,6 @@ Back.args = {};
 
 const deck = getDeck();
 
-console.log(deck);
-
 function DeckTemplate() {
   return (
     <Flex

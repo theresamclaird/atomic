@@ -19,9 +19,9 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Documentation', ['Getting Started', 'Default Theme', 'Contact Me'],
-        'Components', ['Box', 'Flex', 'Grid', 'Text', 'Anchor', 'Panel', 'Image', 'Hero', 'PlayingCard', 'Accordion', 'AccordionGroup', 'HamburgerMenu', 'Navbar', 'HoverBox'],
+        'Components', ['Box', 'Flex', 'Grid', 'Text', 'Anchor', 'Button', 'Panel', 'Image', 'Hero', 'PlayingCard', 'Accordion', 'AccordionGroup', 'HamburgerMenu', 'Navbar', 'HoverBox'],
         'Hooks',
+        'Modules',
       ],
     },
   },
