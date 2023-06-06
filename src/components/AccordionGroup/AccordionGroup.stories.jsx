@@ -27,10 +27,10 @@ function AccordionGroupTemplate(args) {
         <Text sx={{ fontStyle: 'italic' }}>Because it did not get the context.</Text>
       </Accordion>
       <Accordion
-        label={<Text>What did the functional component say to the class component?</Text>}
+        label={<Text>How do you comfort a JavaScript bug?</Text>}
         sx={{ paddingTop: '1rem', borderTop: 'solid 1px #ccc' }}
       >
-        <Text sx={{ fontStyle: 'italic' }}>You are off the hook!</Text>
+        <Text sx={{ fontStyle: 'italic' }}>You console it.</Text>
       </Accordion>
     </AccordionGroup>
   );
