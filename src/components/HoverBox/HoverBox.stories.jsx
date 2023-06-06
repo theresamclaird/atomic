@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 
 export default {
-  title: 'Components/HoverBox',
+  title: 'Atoms/HoverBox',
   component: HoverBox,
   argTypes: {
     sx: { table: { disable: true } },
