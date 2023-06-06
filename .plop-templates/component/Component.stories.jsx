@@ -2,7 +2,7 @@ import React from 'react';
 import {{componentName}} from './{{componentName}}';
 
 export default {
-  title: 'Components/{{componentName}}',
+  title: 'Atoms/{{componentName}}',
   component: {{componentName}},
   argTypes: {
     sx: { table: { disable: true } },
