@@ -6,10 +6,9 @@ import {
 } from '..';
 
 const buttonCss = {
+  fontSize: '2rem',
   backgroundColor: 'transparent',
   border: 'none',
-  fontSize: '3rem',
-  fontWeight: 900,
   cursor: 'pointer',
   padding: 0,
 };
@@ -17,18 +16,17 @@ const buttonCss = {
 const nextPrevButtonCss = {
   ...buttonCss,
   position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  backgroundColor: '#fff',
-  borderRadius: '50%',
-  opacity: 0.5,
-  color: 'focus',
-  size: '5rem',
-  paddingBottom: '0.3rem',
+  top: 0,
+  bottom: 0,
+  backgroundColor: 'rgba(255,255,255,0.2)',
+  borderRadius: 0,
+  color: 'white',
+  padding: '2rem',
 };
 
 function Carousel({ images }) {
   const [imageIndex, setImageIndex] = useState(0);
+  const [showNavigation, setShowNavigation] = useState(false);
 
   const incrementImageIndex = () => {
     setImageIndex((imageIndex + 1) % images.length);
@@ -42,21 +40,31 @@ function Carousel({ images }) {
   return (
     <Flex direction="column" justify="center" align="center">
       <Box sx={{ position: 'relative' }}>
-        <Image {...images[imageIndex]} />
+        <Image
+          {...images[imageIndex]}
+          onMouseEnter={() => setShowNavigation(true)}
+          onMouseOut={() => setShowNavigation(false)}
+        />
         <Button
           sx={{
             ...nextPrevButtonCss,
-            left: 1,
+            visibility: showNavigation ? 'visible' : 'hidden',
+            left: 0,
           }}
-          label="&larr;"
+          onMouseEnter={() => setShowNavigation(true)}
+          onMouseOut={() => setShowNavigation(false)}
+          label="<"
           onClick={() => decrementImageIndex()}
         />
         <Button
           sx={{
             ...nextPrevButtonCss,
-            right: 1,
+            visibility: showNavigation ? 'visible' : 'hidden',
+            right: 0,
           }}
-          label="&rarr;"
+          onMouseEnter={() => setShowNavigation(true)}
+          onMouseOut={() => setShowNavigation(false)}
+          label=">"
           onClick={() => incrementImageIndex()}
         />
       </Box>

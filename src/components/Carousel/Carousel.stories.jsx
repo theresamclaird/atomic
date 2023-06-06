@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from './Carousel';
 
 export default {
-  title: 'Components/Carousel',
+  title: 'Molecules/Carousel',
   component: Carousel,
   argTypes: {
     sx: { table: { disable: true } },
