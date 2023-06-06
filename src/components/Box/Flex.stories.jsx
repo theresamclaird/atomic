@@ -3,7 +3,7 @@ import { Flex } from './Flex';
 import { Text } from '..';
 
 export default {
-  title: 'Components/Flex',
+  title: 'Atoms/Flex',
   component: Flex,
   argTypes: {
     sx: { table: { disable: true } },

@@ -3,7 +3,7 @@ import { Box } from './Box';
 import { Text } from '..';
 
 export default {
-  title: 'Components/Box',
+  title: 'Atoms/Box',
   component: Box,
   argTypes: {
     sx: { table: { disable: true } },
