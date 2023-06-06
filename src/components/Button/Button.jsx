@@ -32,7 +32,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   onClick: PropTypes.func,
   sx: PropTypes.objectOf(PropTypes.any),
 };

@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
 import {
-  Box, Flex, Image, Button,
+  Text, Box, Flex, Image, Button,
 } from '..';
 
 const buttonCss = {
-  fontSize: '2rem',
   backgroundColor: 'transparent',
   border: 'none',
   cursor: 'pointer',
@@ -20,8 +19,13 @@ const nextPrevButtonCss = {
   bottom: 0,
   backgroundColor: 'rgba(255,255,255,0.2)',
   borderRadius: 0,
-  color: 'white',
   padding: '2rem',
+};
+
+const buttonTextCss = {
+  fontSize: '2rem',
+  fontWeight: 900,
+  color: 'white',
 };
 
 function Carousel({ images }) {
@@ -53,7 +57,7 @@ function Carousel({ images }) {
           }}
           onMouseEnter={() => setShowNavigation(true)}
           onMouseOut={() => setShowNavigation(false)}
-          label="<"
+          label={<Text sx={buttonTextCss}>&lt;</Text>}
           onClick={() => decrementImageIndex()}
         />
         <Button
@@ -64,7 +68,7 @@ function Carousel({ images }) {
           }}
           onMouseEnter={() => setShowNavigation(true)}
           onMouseOut={() => setShowNavigation(false)}
-          label=">"
+          label={<Text sx={buttonTextCss}>&gt;</Text>}
           onClick={() => incrementImageIndex()}
         />
       </Box>
