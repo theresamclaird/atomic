@@ -3,7 +3,7 @@ import { Grid } from './Grid';
 import { Text } from '..';
 
 export default {
-  title: 'Components/Grid',
+  title: 'Atoms/Grid',
   component: Grid,
   argTypes: {
     sx: { table: { disable: true } },

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 export default {
-  title: 'Components/Button',
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     sx: { table: { disable: true } },

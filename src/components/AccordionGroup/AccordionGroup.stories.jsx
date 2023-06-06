@@ -4,7 +4,7 @@ import { Accordion } from '../Accordion';
 import { Text } from '..';
 
 export default {
-  title: 'Components/AccordionGroup',
+  title: 'Molecules/AccordionGroup',
   component: AccordionGroup,
   argTypes: {
     sx: { table: { disable: true } },

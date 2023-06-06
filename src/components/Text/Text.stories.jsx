@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { Text } from './Text';
 
 export default {
-  title: 'Components/Text',
+  title: 'Atoms/Text',
   component: Text,
   argTypes: {
     sx: { table: { disable: true } },

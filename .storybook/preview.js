@@ -19,8 +19,8 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Components', ['Box', 'Flex', 'Grid', 'Text', 'Anchor', 'Button', 'Panel', 'Image', 'Accordion', 'AccordionGroup', 'HamburgerMenu', 'Navbar', 'HoverBox'],
-        'Molecules', ['Hero', 'PlayingCard', 'Carousel'],
+        'Atoms', ['Box', 'Flex', 'Grid', 'Text', 'Anchor', 'Button', 'Panel', 'Image', 'Accordion', 'HamburgerMenu', 'HoverBox', 'Modal'],
+        'Molecules', ['Hero', 'PlayingCard', 'Carousel', 'AccordionGroup', 'Navbar'],
         'Hooks',
         'Modules',
       ],

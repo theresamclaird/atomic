@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 
 export default {
-  title: 'Components/HamburgerMenu',
+  title: 'Atoms/HamburgerMenu',
   component: HamburgerMenu,
   argTypes: {
     sx: { table: { disable: true } },

@@ -3,7 +3,7 @@ import { Text } from './Text';
 import { Anchor } from './Anchor';
 
 export default {
-  title: 'Components/Anchor',
+  title: 'Atoms/Anchor',
   component: Anchor,
   argTypes: {
     sx: { table: { disable: true } },

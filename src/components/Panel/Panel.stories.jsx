@@ -3,7 +3,7 @@ import { Panel } from './Panel';
 import { Flex, Text } from '..';
 
 export default {
-  title: 'Components/Panel',
+  title: 'Atoms/Panel',
   component: Panel,
   argTypes: {
     sx: { table: { disable: true } },

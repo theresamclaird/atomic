@@ -4,7 +4,7 @@ import { Flex, Button, Text } from '..';
 import Modal from './Modal';
 
 export default {
-  title: 'Components/Modal',
+  title: 'Atoms/Modal',
   component: Modal,
   argTypes: {
     sx: { table: { disable: true } },

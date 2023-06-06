@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 
 export default {
-  title: 'Components/ThemeProvider',
+  title: 'Atoms/ThemeProvider',
   component: ThemeProvider,
   argTypes: {
     sx: { table: { disable: true } },
