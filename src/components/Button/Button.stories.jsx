@@ -13,10 +13,19 @@ function Template(args) {
   return <Button {...args} />;
 }
 
-export const Example = Template.bind({});
-Example.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   onClick: () => {
-    global.alert('Button Clicked');
+    global.alert('Primary Button Clicked');
+  },
+  label: 'Click Me',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
+  onClick: () => {
+    global.alert('Secondary Button Clicked');
   },
   label: 'Click Me',
 };
