@@ -29,3 +29,11 @@ Secondary.args = {
   },
   label: 'Click Me',
 };
+
+export const Link = Template.bind({});
+Link.args = {
+  onClick: () => {
+    window.open('https://www.atomiccomponentlibrary.com/', '_blank');
+  },
+  label: 'Open ACL In A New Tab',
+};
