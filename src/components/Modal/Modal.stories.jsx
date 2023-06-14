@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { Flex, Button, Text } from '..';
