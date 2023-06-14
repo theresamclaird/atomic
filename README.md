@@ -6,7 +6,7 @@ Atomic is a React component library consisting of
 - Modules: JavaScript modules
 - Themes: All components within Atomic are themed using Styled System
 
-## Use
+## Usage
 
 I built these components both for fun and to use on my personal projects. I make no guarantees that these work as expected or are even useful to anybody except myself. Use at your own risk.
 
