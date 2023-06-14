@@ -6,9 +6,13 @@ Atomic is a React component library consisting of
 - Modules: JavaScript modules
 - Themes: All components within Atomic are themed using Styled System
 
+## Use
+
+I built these components both for fun and to use on my personal projects. I make no guarantees that these work as expected or are even useful to anybody except myself. Use at your own risk.
+
 ## Installation
 
-The package itself is published to github. Use npm to install:
+The package itself is published to github, and requires an access token to install.
 
 ```bash
 npm install @theresamclaird/atomic
