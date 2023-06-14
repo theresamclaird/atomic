@@ -20,7 +20,7 @@ npm install @theresamclaird/atomic
 
 ## Storybook
 
-Components can be viewed from Storybook which is available publicly (see: https://www.atomiccomponentlibrary.com/). I recommend cloning the repository and spin Storybook up on your own machine:
+Components can be viewed from Storybook which is available publicly (see: https://www.atomiccomponentlibrary.com/). I recommend cloning the repository and spinning up Storybook locally:
 
 ```bash
 # install dependencies
