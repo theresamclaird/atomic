@@ -1,5 +1,10 @@
 # Atomic
-Atomic is a React component library consisting of both simple (atomic) React components and more complex components (molecules). I use these components in my personal projects.
+Atomic is a React component library consisting of
+
+- Atoms: Simple React components
+- Molecules: More components components built from atoms
+- Modules: JavaScript modules
+- Themes: All components within Atomic are themed using Styled System
 
 ## Installation
 
