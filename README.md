@@ -18,6 +18,12 @@ The package itself is published to github, and requires an access token to insta
 npm install @theresamclaird/atomic
 ```
 
+## Linting
+
+```bash
+npm run lint
+```
+
 ## Storybook
 
 Components can be viewed from Storybook which is available publicly (see: https://www.atomiccomponentlibrary.com/). I recommend cloning the repository and spinning up Storybook locally:
