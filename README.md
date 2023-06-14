@@ -36,3 +36,19 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+### Adding New Components
+
+Use plop to add and remove components:
+
+```bash
+npm run plop
+```
+
+Follow the (intuitive) prompts to add and delete components:
+
+```bash
+? [PLOP] Please choose a generator. (Use arrow keys)
+❯ addComponent - New Component 
+  removeComponent - remove component 
+```
