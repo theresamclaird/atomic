@@ -26,6 +26,7 @@ function Button({
       py: '0.5rem',
       fontWeight: 900,
     },
+    unstyled: {},
   })[variant];
 
   return (
@@ -52,7 +53,7 @@ Button.defaultProps = {
 Button.propTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'unstyled']),
   sx: PropTypes.objectOf(PropTypes.any),
 };
 

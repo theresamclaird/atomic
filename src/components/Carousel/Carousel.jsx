@@ -8,7 +8,10 @@ import {
 const buttonCss = {
   backgroundColor: 'transparent',
   border: 'none',
+  color: '#562cac',
   cursor: 'pointer',
+  fontSize: '2rem',
+  fontWeight: 900,
   padding: 0,
 };
 
@@ -32,15 +35,6 @@ function Carousel({ images }) {
   const [imageIndex, setImageIndex] = useState(0);
   const [showNavigation, setShowNavigation] = useState(false);
 
-  const incrementImageIndex = () => {
-    setImageIndex((imageIndex + 1) % images.length);
-  };
-
-  const decrementImageIndex = () => {
-    const newIndex = imageIndex - 1;
-    setImageIndex(newIndex < 0 ? images.length - 1 : newIndex);
-  };
-
   return (
     <Flex direction="column" justify="center" align="center">
       <Box sx={{ position: 'relative' }}>
@@ -50,6 +44,7 @@ function Carousel({ images }) {
           onMouseOut={() => setShowNavigation(false)}
         />
         <Button
+          variant="unstyled"
           sx={{
             ...nextPrevButtonCss,
             visibility: showNavigation ? 'visible' : 'hidden',
@@ -58,9 +53,13 @@ function Carousel({ images }) {
           onMouseEnter={() => setShowNavigation(true)}
           onMouseOut={() => setShowNavigation(false)}
           label={<Text sx={buttonTextCss}>&lt;</Text>}
-          onClick={() => decrementImageIndex()}
+          onClick={() => {
+            const newIndex = imageIndex - 1;
+            setImageIndex(newIndex < 0 ? images.length - 1 : newIndex);
+          }}
         />
         <Button
+          variant="unstyled"
           sx={{
             ...nextPrevButtonCss,
             visibility: showNavigation ? 'visible' : 'hidden',
@@ -69,16 +68,17 @@ function Carousel({ images }) {
           onMouseEnter={() => setShowNavigation(true)}
           onMouseOut={() => setShowNavigation(false)}
           label={<Text sx={buttonTextCss}>&gt;</Text>}
-          onClick={() => incrementImageIndex()}
+          onClick={() => {
+            setImageIndex((imageIndex + 1) % images.length);
+          }}
         />
       </Box>
       <Flex direction="row" justify="center" align="center" gap={1} sx={{ mb: 1 }}>
         {images.map((image, index) => {
           if (index === imageIndex) {
-            return (<Button key={nanoid()} label="●" disabled sx={buttonCss} />);
+            return (<Button variant="unstyled" key={nanoid()} label="●" disabled sx={buttonCss} />);
           }
-
-          return (<Button key={nanoid()} label="○" sx={buttonCss} onClick={() => setImageIndex(index)} />);
+          return (<Button variant="unstyled" key={nanoid()} label="○" sx={buttonCss} onClick={() => setImageIndex(index)} />);
         })}
       </Flex>
     </Flex>
