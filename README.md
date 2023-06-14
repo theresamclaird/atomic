@@ -8,17 +8,21 @@ Atomic is a React component library consisting of
 
 ## Installation
 
-After cloning, cd into the folder and install dependencies with npm:
+The package itself is published to github. Use npm to install:
 
 ```bash
-npm install
+npm install @theresamclaird/atomic
 ```
 
 ## Storybook
 
-Components are rendered within Storybook, which can be started as follows:
+Components can be viewed from Storybook, which can be viewed at https://www.atomiccomponentlibrary.com/ or even better, clone the repository and spin it up on your own machine.
 
 ```bash
+# install dependencies
+npm install
+
+# spin up storybook
 npm run storybook
 ```
 
