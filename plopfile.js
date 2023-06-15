@@ -41,6 +41,11 @@ module.exports = plop => {
       },
       {
         type: 'add',
+        templateFile: '.plop-templates/component/Component.test.jsx',
+        path: `${componentPath}{{componentName}}.test.jsx`,
+      },
+      {
+        type: 'add',
         templateFile: '.plop-templates/component/index.js',
         path: `${componentPath}index.js`,
       },

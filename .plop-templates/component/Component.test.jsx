@@ -4,11 +4,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Box } from './Box';
+import { {{componentName}} } from './{{componentName}}';
 
-describe('Box.jsx', () => {
-  test('Renders child content', () => {
-    render(<Box>TEST</Box>);
+describe('{{componentName}}', () => {
+  test('renders content', () => {
+    render(<{{componentName}}>TEST</{{componentName}}>);
     expect(screen.getByText('TEST')).toBeInTheDocument();
   });
 });
