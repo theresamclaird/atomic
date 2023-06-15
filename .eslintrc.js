@@ -21,6 +21,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/no-named-as-default': 'off',
     'no-restricted-exports': 'off',
