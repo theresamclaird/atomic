@@ -1,12 +1,13 @@
 /* eslint-disable no-param-reassign */
 const shuffle = (cards = []) => {
-  for (let index = cards.length - 1; index > 0; index -= 1) {
+  const shuffled = [...cards];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
     const randomCardIndex = Math.floor(Math.random() * (index + 1));
-    const temp = cards[randomCardIndex];
-    cards[randomCardIndex] = cards[index];
-    cards[index] = temp;
+    const temp = shuffled[randomCardIndex];
+    shuffled[randomCardIndex] = shuffled[index];
+    shuffled[index] = temp;
   }
-  return cards;
+  return shuffled;
 };
 
 export { shuffle, shuffle as default };
