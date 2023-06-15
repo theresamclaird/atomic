@@ -24,6 +24,12 @@ npm install @theresamclaird/atomic
 npm run lint
 ```
 
+## Testing
+
+```bash
+npm test
+```
+
 ## Build
 
 ```bash
