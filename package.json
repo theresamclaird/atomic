@@ -16,7 +16,8 @@
     "moduleNameMapper": {
       "\\.svg": "<rootDir>/__mocks__/svg.js"
     },
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "modulePathIgnorePatterns": ["<rootDir>/.plop-templates"]
   },
   "scripts": {
     "test": "jest",
