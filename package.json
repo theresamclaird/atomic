@@ -22,6 +22,9 @@
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.jsx",
       "!<rootDir>/src/**/*.stories.jsx"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
     ]
   },
   "scripts": {

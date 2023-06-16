@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import { Box } from './Box';
 
 describe('Box', () => {
-  test('Renders child content', () => {
+  test('renders child content', () => {
     render(<Box>TEST</Box>);
     expect(screen.getByText('TEST')).toBeInTheDocument();
   });
