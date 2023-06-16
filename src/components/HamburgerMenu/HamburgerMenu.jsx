@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
+import { Button } from '../Button';
 
 function HamburgerMenu({ sx, children, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Box onClick={() => setIsOpen(!isOpen)} sx={sx} {...props}>
-        <Box sx={{ cursor: 'pointer', fontSize: '2rem' }}>☰</Box>
+        <Button
+          variant="unstyled"
+          sx={{ cursor: 'pointer', fontSize: '2rem' }}
+          label="☰"
+        />
         <Box
           sx={{
             '@keyframes fadeIn': {
