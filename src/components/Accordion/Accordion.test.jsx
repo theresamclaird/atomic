@@ -8,10 +8,10 @@ import { Accordion } from './Accordion';
 
 describe('Accordion', () => {
   test('Renders child content', () => {
-    render(<Accordion label="TEST">REVEAL</Accordion>);
+    render(<Accordion label="LABEL">CONTENT</Accordion>);
 
-    const labelElement = screen.getByText('TEST');
-    const contentElement = screen.getByText('REVEAL');
+    const labelElement = screen.getByText('LABEL');
+    const contentElement = screen.getByText('CONTENT');
 
     // Initial state
     expect(labelElement).toBeInTheDocument();
