@@ -11,7 +11,7 @@ function AccordionGroup({
   return (
     <Box {...props}>
       {childArray.map((child, index) => (cloneElement(child, {
-        key: child.label,
+        key: `accordion-item-${Math.random()}`,
         expandSymbol,
         collapseSymbol,
         expanded: state[index],

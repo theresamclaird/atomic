@@ -13,7 +13,7 @@ export default {
 
 function AccordionGroupTemplate(args) {
   return (
-    <AccordionGroup {...args}>
+    <AccordionGroup {...args} sx={{ m: 1 }}>
       <Accordion
         label={<Text>Why did the React Component have great self-esteem?</Text>}
         sx={{ paddingTop: '1rem' }}
@@ -37,8 +37,11 @@ function AccordionGroupTemplate(args) {
 }
 
 export const Default = AccordionGroupTemplate.bind({});
-Default.args = {
-  sx: {
-    margin: '1rem',
-  },
+Default.args = {};
+
+export const ExpandOneAtATime = AccordionGroupTemplate.bind({});
+ExpandOneAtATime.args = {
+  reducer: (state, action) => (
+    state.map((value, index) => (index === action.index ? !value : false))
+  ),
 };

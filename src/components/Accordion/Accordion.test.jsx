@@ -2,29 +2,26 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Accordion } from './Accordion';
 
 describe('Accordion', () => {
-  test('Renders child content', () => {
+  test('renders collapsed', () => {
     render(<Accordion label="LABEL">CONTENT</Accordion>);
 
     const labelElement = screen.getByText('LABEL');
     const contentElement = screen.getByText('CONTENT');
 
-    // Initial state
     expect(labelElement).toBeInTheDocument();
     expect(contentElement).toBeInTheDocument();
     expect(labelElement).toBeVisible();
     expect(contentElement).not.toBeVisible();
+  });
 
-    // Expanded state
-    fireEvent.click(labelElement);
-    expect(contentElement).toBeVisible();
+  test('Renders expanded', () => {
+    render(<Accordion expanded label="LABEL">CONTENT</Accordion>);
 
-    // Collapsed state
-    fireEvent.click(labelElement);
-    expect(contentElement).not.toBeVisible();
+    expect(screen.getByText('CONTENT')).toBeVisible();
   });
 });

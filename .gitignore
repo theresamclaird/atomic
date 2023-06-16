@@ -3,3 +3,4 @@ dist
 stats.html
 .DS_Store
 todo.txt
+coverage

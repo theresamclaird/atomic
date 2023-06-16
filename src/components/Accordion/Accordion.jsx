@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Flex } from '../Box';
+import { Button } from '../Button';
 import { Text } from '../Text';
 
 function Accordion({
   expanded, label, expandSymbol, collapseSymbol, children, ...props
 }) {
-  const [isExpanded, setIsExpanded] = useState(expanded);
-
   return (
     <Box {...props}>
       <Flex
-        onClick={() => setIsExpanded(!isExpanded)}
         sx={{
           ':hover': { cursor: 'pointer' },
           flexDirection: 'row',
@@ -20,8 +18,8 @@ function Accordion({
           pb: 'small',
         }}
       >
-        {label}
-        <Text>{isExpanded ? collapseSymbol : expandSymbol}</Text>
+        <Button variant="unstyled" label={label} />
+        <Text>{expanded ? collapseSymbol : expandSymbol}</Text>
       </Flex>
       <Box
         sx={{
@@ -31,7 +29,7 @@ function Accordion({
             '100%': { display: 'block', opacity: 1 },
           },
           animation: 'slideOpen 0.333s ease 1',
-          display: isExpanded ? 'block' : 'none',
+          display: expanded ? 'block' : 'none',
         }}
       >
         {children}

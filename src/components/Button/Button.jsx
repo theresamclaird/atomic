@@ -26,7 +26,11 @@ function Button({
       py: '0.5rem',
       fontWeight: 900,
     },
-    unstyled: {},
+    unstyled: {
+      cursor: 'pointer',
+      border: 'none',
+      backgroundColor: 'transparent',
+    },
   })[variant];
 
   return (

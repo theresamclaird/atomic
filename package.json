@@ -17,7 +17,12 @@
       "\\.svg": "<rootDir>/__mocks__/svg.js"
     },
     "testEnvironment": "jsdom",
-    "modulePathIgnorePatterns": ["<rootDir>/.plop-templates"]
+    "modulePathIgnorePatterns": ["<rootDir>/.plop-templates"],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.jsx",
+      "!<rootDir>/src/**/*.stories.jsx"
+    ]
   },
   "scripts": {
     "test": "jest",
