@@ -78,4 +78,27 @@ describe('Carousel', () => {
     fireEvent.mouseLeave(screen.getByRole('button', { name: '<' }));
     await waitFor(() => screen.getByAltText('First Image'));
   });
+
+  test('bottom navigation buttons', async () => {
+    render(
+      <Carousel
+        images={[
+          {
+            alt: 'First Image',
+            src: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/_TEM1665-900.webp',
+          },
+          {
+            alt: 'Second Image',
+            src: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/sjg-900.webp',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: '●' })).toBeVisible();
+    expect(screen.getByRole('button', { name: '○' })).toBeVisible();
+
+    fireEvent.click(screen.getByRole('button', { name: '○' }));
+    expect(screen.getByAltText('Second Image')).toBeVisible();
+  });
 });
