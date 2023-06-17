@@ -25,6 +25,14 @@
       "<rootDir>/src/**/*.jsx",
       "!<rootDir>/src/**/*.stories.jsx"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 79.48,
+        "functions": 65.57,
+        "lines": 78.43,
+        "statements": 76.68
+      }
+    },
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ]
@@ -39,6 +47,10 @@
     "plop": "plop",
     "patch": "npm version patch --force && npm run build && npm publish",
     "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,html,css}": "prettier --write",
+    "src/**/*.{js,jsx}": "eslint"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.1.0",
@@ -84,16 +96,18 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
+    "husky": "^8.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^13.2.2",
     "plop": "^3.1.2",
+    "prettier": "^2.8.8",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.41.4",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-visualizer": "^4.2.0",
-    "storybook": "^7.0.18",
-    "husky": "^8.0.0"
+    "storybook": "^7.0.18"
   }
 }
