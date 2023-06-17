@@ -13,7 +13,7 @@ function PlayingCard({
   label,
   pip,
   value,
-  sx = {},
+  sx,
   ...props
 }) {
   const pipStyle = {
