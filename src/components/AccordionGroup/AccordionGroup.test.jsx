@@ -30,12 +30,17 @@ describe('AccordionGroup', () => {
     expect(content2Element).toBeInTheDocument();
     expect(label2Element).toBeVisible();
     expect(content2Element).not.toBeVisible();
+
+    expect(screen.getAllByText('+').length).toBe(2);
+    expect(screen.getAllByText('+')[0]).toBeVisible();
+    expect(screen.getAllByText('+')[1]).toBeVisible();
   });
 
   test('interactions', () => {
     render(
       <AccordionGroup>
         <Accordion label="LABEL1">CONTENT1</Accordion>
+        <Accordion label="LABEL2">CONTENT2</Accordion>
       </AccordionGroup>
     );
 
@@ -44,10 +49,14 @@ describe('AccordionGroup', () => {
     // Click to expand the Accordion.
     fireEvent.click(screen.getByRole('button', { name: 'LABEL1' }));
     expect(screen.getByText('CONTENT1')).toBeVisible();
+    expect(screen.getByText('-')).toBeVisible();
 
     // Click again to collapse the Accordion.
     fireEvent.click(screen.getByRole('button', { name: 'LABEL1' }));
     expect(screen.getByText('CONTENT1')).not.toBeVisible();
+    expect(screen.getAllByText('+').length).toBe(2);
+    expect(screen.getAllByText('+')[0]).toBeVisible();
+    expect(screen.getAllByText('+')[1]).toBeVisible();
   });
 
   test('interactions with custom reducer', () => {
