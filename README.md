@@ -37,6 +37,16 @@ npm test
 npm run build
 ```
 
+## Repository Hygiene
+
+Coverage thresholds are set to 100%, and both testing and linting are checked in a husky pre-commit hook. 
+
+## Publishing
+
+```bash
+npm run patch
+```
+
 ## Storybook
 
 Components can be viewed from Storybook which is available publicly (see: https://www.atomiccomponentlibrary.com/). I recommend cloning the repository and spinning up Storybook locally:
