@@ -22,15 +22,17 @@
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.jsx",
-      "!<rootDir>/src/**/*.stories.jsx"
+      "<rootDir>/src/**/*.{js,jsx}",
+      "!<rootDir>/src/**/*.stories.jsx",
+      "!<rootDir>/src/**/index.js",
+      "!<rootDir>/src/hooks/*"
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 87,
-        "functions": 78,
-        "lines": 82,
-        "statements": 82
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
       }
     },
     "setupFilesAfterEnv": [
