@@ -257,4 +257,26 @@ describe('PlayingCard', () => {
     expect(screen.getAllByText('♠')[0]).toBeVisible();
     expect(screen.getAllByText('♠')[1]).toBeVisible();
   });
+
+  test('sx prop', () => {
+    render(
+      <PlayingCard
+        color="#000"
+        suit="spades"
+        label="K"
+        face="king"
+        pip="♠"
+        value={10}
+      />
+    );
+
+    expect(screen.getAllByText('K').length).toBe(2);
+    expect(screen.getAllByText('K')[0]).toBeVisible();
+    expect(screen.getAllByText('K')[1]).toBeVisible();
+
+    // corner pips are rendered with CSS ::after
+    expect(screen.getAllByText('♠').length).toBe(2);
+    expect(screen.getAllByText('♠')[0]).toBeVisible();
+    expect(screen.getAllByText('♠')[1]).toBeVisible();
+  });
 });

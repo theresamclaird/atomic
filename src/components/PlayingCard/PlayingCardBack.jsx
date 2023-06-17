@@ -5,6 +5,7 @@ import { Box } from '../Box';
 function PlayingCardBack({ width, sx, ...props }) {
   return (
     <Box
+      data-testid="card-back"
       sx={{
         display: 'inline-block',
         boxShadow: '0 0 2px #666',
