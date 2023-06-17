@@ -2,15 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pip from './Pip';
 
-function Pips({
-  color, count, pip, sx, ...props
-}) {
+function Pips({ color, count, pip, sx, ...props }) {
   const pipsArray = [];
   for (let i = 0; i < count; i += 1) {
     pipsArray.push(
       <React.Fragment key={`pip-${i}`}>
         <Pip symbol={pip} sx={{ color, ...sx }} {...props} />
-      </React.Fragment>,
+      </React.Fragment>
     );
   }
   return pipsArray;

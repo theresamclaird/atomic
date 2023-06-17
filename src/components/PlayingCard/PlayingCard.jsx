@@ -6,7 +6,15 @@ import Corner from './Corner';
 import Face from './Face';
 
 function PlayingCard({
-  width, color, suit, face, label, pip, value, sx = {}, ...props
+  width,
+  color,
+  suit,
+  face,
+  label,
+  pip,
+  value,
+  sx = {},
+  ...props
 }) {
   const pipStyle = {
     1: {
@@ -409,15 +417,30 @@ function PlayingCard({
           ...applesauce,
         }}
       >
-        {face
-          ? <Face color={color} suit={suit} image={face} label={label} pip={pip} />
-          : <Pips count={value} pip={pip} color={color} />}
-        <Corner label={label} pip={pip} sx={{ top: '0.25rem', left: '0.25rem', color }} />
+        {face ? (
+          <Face
+            color={color}
+            suit={suit}
+            image={face}
+            label={label}
+            pip={pip}
+          />
+        ) : (
+          <Pips count={value} pip={pip} color={color} />
+        )}
+        <Corner
+          label={label}
+          pip={pip}
+          sx={{ top: '0.25rem', left: '0.25rem', color }}
+        />
         <Corner
           label={label}
           pip={pip}
           sx={{
-            bottom: '0.25rem', right: '0.25rem', transform: 'rotate(180deg)', color,
+            bottom: '0.25rem',
+            right: '0.25rem',
+            transform: 'rotate(180deg)',
+            color,
           }}
         />
       </Grid>

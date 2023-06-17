@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex } from '../Box';
 
-function Navbar({
-  as, sx, children, ...props
-}) {
+function Navbar({ as, sx, children, ...props }) {
   return (
     <Flex
       as={as}

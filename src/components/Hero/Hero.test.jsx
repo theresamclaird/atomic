@@ -15,7 +15,7 @@ describe('Hero', () => {
         aspectRatio={1.618}
       >
         TEST
-      </Hero>,
+      </Hero>
     );
 
     expect(screen.getByAltText('TESTALT')).toBeVisible();

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 
-function Image({
-  alt, src, sources, aspectRatio, sx, ...props
-}) {
+function Image({ alt, src, sources, aspectRatio, sx, ...props }) {
   if (aspectRatio !== 0) {
     return (
       <Box
@@ -32,7 +30,12 @@ function Image({
             alt={alt}
             src={src}
             sx={{
-              position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', ...sx,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              ...sx,
             }}
             {...props}
           />
@@ -53,7 +56,9 @@ function Image({
         alt={alt}
         src={src}
         sx={{
-          width: '100%', height: '100%', ...sx,
+          width: '100%',
+          height: '100%',
+          ...sx,
         }}
         {...props}
       />

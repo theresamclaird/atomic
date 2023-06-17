@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
 
-function Button({
-  label, onClick, variant, sx, ...props
-}) {
-  const variantCss = ({
+function Button({ label, onClick, variant, sx, ...props }) {
+  const variantCss = {
     primary: {
       cursor: 'pointer',
       backgroundColor: '#562cac',
@@ -31,7 +29,7 @@ function Button({
       border: 'none',
       backgroundColor: 'transparent',
     },
-  })[variant];
+  }[variant];
 
   return (
     <Box

@@ -13,7 +13,7 @@ describe('AccordionGroup', () => {
       <AccordionGroup>
         <Accordion label="LABEL1">CONTENT1</Accordion>
         <Accordion label="LABEL2">CONTENT2</Accordion>
-      </AccordionGroup>,
+      </AccordionGroup>
     );
 
     const label1Element = screen.getByText('LABEL1');
@@ -36,7 +36,7 @@ describe('AccordionGroup', () => {
     render(
       <AccordionGroup>
         <Accordion label="LABEL1">CONTENT1</Accordion>
-      </AccordionGroup>,
+      </AccordionGroup>
     );
 
     expect(screen.getByText('CONTENT1')).not.toBeVisible();
@@ -53,13 +53,13 @@ describe('AccordionGroup', () => {
   test('interactions with custom reducer', () => {
     render(
       <AccordionGroup
-        reducer={(state, action) => (
+        reducer={(state, action) =>
           state.map((value, index) => (index === action.index ? !value : false))
-        )}
+        }
       >
         <Accordion label="LABEL1">CONTENT1</Accordion>
         <Accordion label="LABEL2">CONTENT2</Accordion>
-      </AccordionGroup>,
+      </AccordionGroup>
     );
 
     expect(screen.getByText('CONTENT1')).not.toBeVisible();

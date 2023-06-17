@@ -10,9 +10,13 @@ const useStorage = (key, defaultValue, storage) => {
     return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
   });
 
-  useEffect(() => (value === undefined
-    ? storage.removeItem(key)
-    : storage.setItem(key, JSON.stringify(value))), [key, value, storage]);
+  useEffect(
+    () =>
+      value === undefined
+        ? storage.removeItem(key)
+        : storage.setItem(key, JSON.stringify(value)),
+    [key, value, storage]
+  );
 
   const remove = useCallback(() => {
     setValue(undefined);
@@ -21,12 +25,10 @@ const useStorage = (key, defaultValue, storage) => {
   return [value, setValue, remove];
 };
 
-const useLocalStorage = (key, defaultValue) => (
-  useStorage(key, defaultValue, window?.localStorage)
-);
+const useLocalStorage = (key, defaultValue) =>
+  useStorage(key, defaultValue, window?.localStorage);
 
-const useSessionStorage = (key, defaultValue) => (
-  useStorage(key, defaultValue, window?.sessionStorage)
-);
+const useSessionStorage = (key, defaultValue) =>
+  useStorage(key, defaultValue, window?.sessionStorage);
 
 export { useLocalStorage, useSessionStorage };

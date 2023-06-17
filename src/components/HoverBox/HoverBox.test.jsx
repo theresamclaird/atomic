@@ -2,9 +2,7 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import {
-  render, screen, fireEvent, waitFor,
-} from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { HoverBox } from './HoverBox';
 import { Text } from '../Text';
@@ -13,8 +11,8 @@ describe('HoverBox', () => {
   test('renders child content', async () => {
     render(
       <HoverBox>
-        {(mouseEntered) => <Text>{mouseEntered ? 'YES' : 'NO'}</Text>}
-      </HoverBox>,
+        {mouseEntered => <Text>{mouseEntered ? 'YES' : 'NO'}</Text>}
+      </HoverBox>
     );
     expect(screen.getByText('NO')).toBeVisible();
 

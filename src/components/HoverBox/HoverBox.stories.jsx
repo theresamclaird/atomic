@@ -14,9 +14,11 @@ export default {
 function Template(args) {
   return (
     <HoverBox {...args}>
-      {(mouseEntered) => (
+      {mouseEntered => (
         <Box sx={{ p: 'small', bg: mouseEntered ? '#f00' : 'unset' }}>
-          <Text>This text will change the background color to red on hover.</Text>
+          <Text>
+            This text will change the background color to red on hover.
+          </Text>
         </Box>
       )}
     </HoverBox>

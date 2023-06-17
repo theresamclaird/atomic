@@ -70,21 +70,21 @@ const getDeck = (
     { label: 'J', value: 10 },
     { label: 'Q', value: 10 },
     { label: 'K', value: 10 },
-  ],
+  ]
 ) => {
   const cards = [];
-  suits.forEach(({
-    color, faces, name: suit, pip,
-  }) => (
-    ranks.forEach(({ label, value }) => cards.push({
-      color,
-      suit,
-      face: faces?.[label] || null,
-      label,
-      pip,
-      value,
-    }))
-  ));
+  suits.forEach(({ color, faces, name: suit, pip }) =>
+    ranks.forEach(({ label, value }) =>
+      cards.push({
+        color,
+        suit,
+        face: faces?.[label] || null,
+        label,
+        pip,
+        value,
+      })
+    )
+  );
 
   return cards;
 };

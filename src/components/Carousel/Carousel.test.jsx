@@ -2,9 +2,7 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import {
-  render, screen, fireEvent, waitFor,
-} from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Carousel } from './Carousel';
 
@@ -22,7 +20,7 @@ describe('Carousel', () => {
             src: 'https://mclairdfamily-images.s3.us-west-2.amazonaws.com/sjg-900.webp',
           },
         ]}
-      />,
+      />
     );
 
     expect(screen.getByAltText('First Image')).toBeVisible();

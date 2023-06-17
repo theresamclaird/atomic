@@ -9,13 +9,7 @@ import { PlayingCard } from './PlayingCard';
 describe('PlayingCard', () => {
   test('renders Ace', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="A"
-        pip="♠"
-        value={1}
-      />,
+      <PlayingCard color="#000" suit="spades" label="A" pip="♠" value={1} />
     );
 
     expect(screen.getAllByText('A').length).toBe(2);
@@ -29,13 +23,7 @@ describe('PlayingCard', () => {
 
   test('renders Two', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="2"
-        pip="♠"
-        value={2}
-      />,
+      <PlayingCard color="#000" suit="spades" label="2" pip="♠" value={2} />
     );
 
     expect(screen.getAllByText('2').length).toBe(2);
@@ -50,13 +38,7 @@ describe('PlayingCard', () => {
 
   test('renders Three', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="3"
-        pip="♠"
-        value={3}
-      />,
+      <PlayingCard color="#000" suit="spades" label="3" pip="♠" value={3} />
     );
 
     expect(screen.getAllByText('3').length).toBe(2);
@@ -72,13 +54,7 @@ describe('PlayingCard', () => {
 
   test('renders Four', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="4"
-        pip="♠"
-        value={4}
-      />,
+      <PlayingCard color="#000" suit="spades" label="4" pip="♠" value={4} />
     );
 
     expect(screen.getAllByText('4').length).toBe(2);
@@ -95,13 +71,7 @@ describe('PlayingCard', () => {
 
   test('renders Five', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="5"
-        pip="♠"
-        value={5}
-      />,
+      <PlayingCard color="#000" suit="spades" label="5" pip="♠" value={5} />
     );
 
     expect(screen.getAllByText('5').length).toBe(2);
@@ -119,13 +89,7 @@ describe('PlayingCard', () => {
 
   test('renders Six', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="6"
-        pip="♠"
-        value={6}
-      />,
+      <PlayingCard color="#000" suit="spades" label="6" pip="♠" value={6} />
     );
 
     expect(screen.getAllByText('6').length).toBe(2);
@@ -144,13 +108,7 @@ describe('PlayingCard', () => {
 
   test('renders Seven', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="7"
-        pip="♠"
-        value={7}
-      />,
+      <PlayingCard color="#000" suit="spades" label="7" pip="♠" value={7} />
     );
 
     expect(screen.getAllByText('7').length).toBe(2);
@@ -170,13 +128,7 @@ describe('PlayingCard', () => {
 
   test('renders Eight', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="8"
-        pip="♠"
-        value={8}
-      />,
+      <PlayingCard color="#000" suit="spades" label="8" pip="♠" value={8} />
     );
 
     expect(screen.getAllByText('8').length).toBe(2);
@@ -197,13 +149,7 @@ describe('PlayingCard', () => {
 
   test('renders Nine', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="9"
-        pip="♠"
-        value={9}
-      />,
+      <PlayingCard color="#000" suit="spades" label="9" pip="♠" value={9} />
     );
 
     expect(screen.getAllByText('9').length).toBe(2);
@@ -225,13 +171,7 @@ describe('PlayingCard', () => {
 
   test('renders Ten', () => {
     render(
-      <PlayingCard
-        color="#000"
-        suit="spades"
-        label="10"
-        pip="♠"
-        value={10}
-      />,
+      <PlayingCard color="#000" suit="spades" label="10" pip="♠" value={10} />
     );
 
     expect(screen.getAllByText('10').length).toBe(2);
@@ -261,7 +201,7 @@ describe('PlayingCard', () => {
         face="jack"
         pip="♠"
         value={10}
-      />,
+      />
     );
 
     expect(screen.getAllByText('J').length).toBe(2);
@@ -283,7 +223,7 @@ describe('PlayingCard', () => {
         face="queen"
         pip="♠"
         value={10}
-      />,
+      />
     );
 
     expect(screen.getAllByText('Q').length).toBe(2);
@@ -305,7 +245,7 @@ describe('PlayingCard', () => {
         face="king"
         pip="♠"
         value={10}
-      />,
+      />
     );
 
     expect(screen.getAllByText('K').length).toBe(2);

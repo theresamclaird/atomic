@@ -3,16 +3,14 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Flex, Box } from '../Box';
 
-function Modal({
-  onClose, backgroundColor, children, show, sx, ...props
-}) {
+function Modal({ onClose, backgroundColor, children, show, sx, ...props }) {
   const contentRef = useRef();
 
   if (!show) {
     return null;
   }
 
-  const handleCloseModal = (e) => {
+  const handleCloseModal = e => {
     if (!contentRef.current?.contains(e.target)) {
       onClose();
     }
@@ -50,7 +48,7 @@ function Modal({
         {children}
       </Box>
     </Flex>,
-    document.querySelector('body'),
+    document.querySelector('body')
   );
 }
 

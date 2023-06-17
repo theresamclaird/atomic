@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import { Box, Flex } from '../Box';
 import Pip from './Pip';
 
-function Face({
-  suit, color, image, label, pip,
-}) {
+function Face({ suit, color, image, label, pip }) {
   const top = '0.9rem';
   const bottom = '0.9rem';
   const left = '1.5rem';
@@ -56,14 +54,15 @@ function Face({
 
   return (
     <>
-      <Flex sx={{
-        gridRowStart: 1,
-        gridRowEnd: 'span 16',
-        gridColumnStart: 1,
-        gridColumnEnd: 'span 6',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+      <Flex
+        sx={{
+          gridRowStart: 1,
+          gridRowEnd: 'span 16',
+          gridColumnStart: 1,
+          gridColumnEnd: 'span 6',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
       >
         <Box
           sx={{
@@ -79,13 +78,20 @@ function Face({
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1.5rem', position: 'absolute', color, ...topPipStyle,
+          fontSize: '1.5rem',
+          position: 'absolute',
+          color,
+          ...topPipStyle,
         }}
       />
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1.5rem', position: 'absolute', color, transform: 'rotate(180deg)', ...bottomPipStyle,
+          fontSize: '1.5rem',
+          position: 'absolute',
+          color,
+          transform: 'rotate(180deg)',
+          ...bottomPipStyle,
         }}
       />
     </>

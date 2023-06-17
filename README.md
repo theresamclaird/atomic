@@ -1,4 +1,5 @@
 # Atomic
+
 Atomic is a React component library consisting of
 
 - Atoms: Simple React components
@@ -67,6 +68,6 @@ Follow the (intuitive) prompts to add and delete components:
 
 ```bash
 ? [PLOP] Please choose a generator. (Use arrow keys)
-❯ addComponent - New Component 
-  removeComponent - remove component 
+❯ addComponent - New Component
+  removeComponent - remove component
 ```

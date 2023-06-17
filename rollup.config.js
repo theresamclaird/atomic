@@ -36,5 +36,5 @@ export default [
       visualizer({ open: false, gzipSize: true }),
       json(),
     ],
-  }
+  },
 ];

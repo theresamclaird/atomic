@@ -21,9 +21,15 @@ function PageTemplate(args) {
         backgroundColor: '#cdcdcd',
       }}
     >
-      <Panel {...args}><Text>I am the first panel.</Text></Panel>
-      <Panel {...args}><Text>I am the second panel.</Text></Panel>
-      <Panel {...args}><Text>I am the third panel.</Text></Panel>
+      <Panel {...args}>
+        <Text>I am the first panel.</Text>
+      </Panel>
+      <Panel {...args}>
+        <Text>I am the second panel.</Text>
+      </Panel>
+      <Panel {...args}>
+        <Text>I am the third panel.</Text>
+      </Panel>
     </Flex>
   );
 }

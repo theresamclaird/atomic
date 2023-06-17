@@ -1,0 +1,10 @@
+node_modules
+dist
+stats.html
+.DS_Store
+todo.txt
+coverage
+.storybook
+.plop-templates
+.husky
+storybook-static

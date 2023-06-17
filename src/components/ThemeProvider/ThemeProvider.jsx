@@ -5,9 +5,7 @@ import { defaultTheme } from '../../themes';
 
 function ThemeProvider({ theme: themeOverrides, children }) {
   return (
-    <EmotionThemeProvider
-      theme={{ ...defaultTheme, ...themeOverrides }}
-    >
+    <EmotionThemeProvider theme={{ ...defaultTheme, ...themeOverrides }}>
       {children}
     </EmotionThemeProvider>
   );

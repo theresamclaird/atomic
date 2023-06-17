@@ -5,7 +5,12 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 
 function Accordion({
-  expanded, label, expandSymbol, collapseSymbol, children, ...props
+  expanded,
+  label,
+  expandSymbol,
+  collapseSymbol,
+  children,
+  ...props
 }) {
   return (
     <Box {...props}>

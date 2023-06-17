@@ -4,28 +4,36 @@ import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 
 function AccordionGroup({
-  reducer, children, expandSymbol, collapseSymbol, ...props
+  reducer,
+  children,
+  expandSymbol,
+  collapseSymbol,
+  ...props
 }) {
   const childArray = Children.toArray(children);
-  const [state, dispatch] = useReducer(reducer, childArray.map((child) => !!child.expanded));
+  const [state, dispatch] = useReducer(
+    reducer,
+    childArray.map(child => !!child.expanded)
+  );
 
   return (
     <Box {...props}>
-      {childArray.map((child, index) => (cloneElement(child, {
-        key: nanoid(),
-        expandSymbol,
-        collapseSymbol,
-        expanded: state[index],
-        onClick: () => dispatch({ index }),
-      })))}
+      {childArray.map((child, index) =>
+        cloneElement(child, {
+          key: nanoid(),
+          expandSymbol,
+          collapseSymbol,
+          expanded: state[index],
+          onClick: () => dispatch({ index }),
+        })
+      )}
     </Box>
   );
 }
 
 AccordionGroup.defaultProps = {
-  reducer: (state, action) => (
-    state.map((value, index) => (index === action.index ? !value : value))
-  ),
+  reducer: (state, action) =>
+    state.map((value, index) => (index === action.index ? !value : value)),
   expandSymbol: '+',
   collapseSymbol: '-',
 };

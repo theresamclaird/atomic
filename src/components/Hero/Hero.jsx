@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { Box } from '../Box';
 import { Image, ImageSourcePropType } from '../Image';
 
-function Hero({
-  alt, src, sources, aspectRatio, sx, children, ...props
-}) {
+function Hero({ alt, src, sources, aspectRatio, sx, children, ...props }) {
   return (
     <Box
       sx={{
@@ -16,7 +14,13 @@ function Hero({
       }}
       {...props}
     >
-      <Image alt={alt} src={src} sources={sources} aspectRatio={aspectRatio} sx={{ objectFit: 'contain' }} />
+      <Image
+        alt={alt}
+        src={src}
+        sources={sources}
+        aspectRatio={aspectRatio}
+        sx={{ objectFit: 'contain' }}
+      />
       {children && <Box sx={{ p: ['small', 'medium'] }}>{children}</Box>}
     </Box>
   );

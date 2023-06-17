@@ -11,8 +11,10 @@ describe('HamburgerMenu', () => {
   test('renders child content', () => {
     render(
       <HamburgerMenu>
-        <Text as="a" href="#">Menu Link</Text>
-      </HamburgerMenu>,
+        <Text as="a" href="#">
+          Menu Link
+        </Text>
+      </HamburgerMenu>
     );
     expect(screen.getByText('☰')).toBeVisible();
     expect(screen.getByText('Menu Link')).toBeInTheDocument();
@@ -22,8 +24,10 @@ describe('HamburgerMenu', () => {
   test('shows menu after click', () => {
     render(
       <HamburgerMenu>
-        <Text as="a" href="#">Menu Link</Text>
-      </HamburgerMenu>,
+        <Text as="a" href="#">
+          Menu Link
+        </Text>
+      </HamburgerMenu>
     );
 
     fireEvent.click(screen.getByRole('button', { name: '☰' }));

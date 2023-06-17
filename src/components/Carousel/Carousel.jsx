@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
-import {
-  Text, Box, Flex, Image, Button,
-} from '..';
+import { Text, Box, Flex, Image, Button } from '..';
 
 const buttonCss = {
   backgroundColor: 'transparent',
@@ -73,12 +71,34 @@ function Carousel({ images }) {
           }}
         />
       </Box>
-      <Flex direction="row" justify="center" align="center" gap={1} sx={{ mb: 1 }}>
+      <Flex
+        direction="row"
+        justify="center"
+        align="center"
+        gap={1}
+        sx={{ mb: 1 }}
+      >
         {images.map((image, index) => {
           if (index === imageIndex) {
-            return (<Button variant="unstyled" key={nanoid()} label="●" disabled sx={buttonCss} />);
+            return (
+              <Button
+                variant="unstyled"
+                key={nanoid()}
+                label="●"
+                disabled
+                sx={buttonCss}
+              />
+            );
           }
-          return (<Button variant="unstyled" key={nanoid()} label="○" sx={buttonCss} onClick={() => setImageIndex(index)} />);
+          return (
+            <Button
+              variant="unstyled"
+              key={nanoid()}
+              label="○"
+              sx={buttonCss}
+              onClick={() => setImageIndex(index)}
+            />
+          );
         })}
       </Flex>
     </Flex>
@@ -86,14 +106,18 @@ function Carousel({ images }) {
 }
 
 Carousel.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
-    alt: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    sources: PropTypes.arrayOf(PropTypes.shape({
-      media: PropTypes.string,
-      srcset: PropTypes.string.isRequired,
-    })),
-  })).isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      alt: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired,
+      sources: PropTypes.arrayOf(
+        PropTypes.shape({
+          media: PropTypes.string,
+          srcset: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ).isRequired,
 };
 
 export { Carousel, Carousel as default };

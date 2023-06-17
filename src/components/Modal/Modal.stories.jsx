@@ -21,9 +21,19 @@ function ModalExample() {
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <Text as="h2">Nulla Qui Incididunt</Text>
         <Text sx={{ mt: 1 }}>
-          Non ea esse ad quis. Consequat non excepteur incididunt in. Deserunt exercitation non fugiat quis eu sit esse ad fugiat culpa ea elit voluptate reprehenderit. Labore commodo cillum adipisicing nostrud id voluptate tempor. Voluptate non mollit ullamco enim mollit aliquip id consequat ea proident.
+          Non ea esse ad quis. Consequat non excepteur incididunt in. Deserunt
+          exercitation non fugiat quis eu sit esse ad fugiat culpa ea elit
+          voluptate reprehenderit. Labore commodo cillum adipisicing nostrud id
+          voluptate tempor. Voluptate non mollit ullamco enim mollit aliquip id
+          consequat ea proident.
         </Text>
-        <Flex direction="row" justify="flex-end" align="center" gap={1} sx={{ mt: 1 }}>
+        <Flex
+          direction="row"
+          justify="flex-end"
+          align="center"
+          gap={1}
+          sx={{ mt: 1 }}
+        >
           <Button label="Close" onClick={() => setShowModal(false)} />
           <Button label="Confirm" onClick={() => alert('Confirm Clicked')} />
         </Flex>

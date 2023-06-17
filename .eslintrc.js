@@ -10,16 +10,13 @@ module.exports = {
     'airbnb',
     'plugin:storybook/recommended',
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -30,8 +27,15 @@ module.exports = {
     'import/no-unresolved': [
       'error',
       {
-        'ignore': ['\.svg'],
-      }
+        ignore: ['.svg'],
+      },
     ],
+    'comma-dangle': 'off',
+    'arrow-parens': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
+    'object-curly-newline': 'off',
+    'react/jsx-curly-newline': 'off',
+    'no-confusing-arrow': 'off',
   },
 };

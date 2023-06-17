@@ -20,7 +20,11 @@ describe('Accordion', () => {
   });
 
   test('Renders expanded', () => {
-    render(<Accordion expanded label="LABEL">CONTENT</Accordion>);
+    render(
+      <Accordion expanded label="LABEL">
+        CONTENT
+      </Accordion>
+    );
 
     expect(screen.getByText('CONTENT')).toBeVisible();
   });

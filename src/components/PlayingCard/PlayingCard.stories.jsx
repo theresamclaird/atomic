@@ -14,9 +14,7 @@ export default {
 };
 
 function PlayingCardTemplate(args) {
-  return (
-    <PlayingCard {...args} />
-  );
+  return <PlayingCard {...args} />;
 }
 
 export const Front = PlayingCardTemplate.bind({});
@@ -55,7 +53,7 @@ function DeckTemplate() {
         gap: '1rem',
       }}
     >
-      {deck.map((card) => (
+      {deck.map(card => (
         <Fragment key={`${card.label} of ${card.suit}}`}>
           <PlayingCard {...card} />
         </Fragment>

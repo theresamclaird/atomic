@@ -15,7 +15,10 @@ function Template(args) {
   return (
     <ThemeProvider {...args}>
       <Box sx={{ padding: 1, backgroundColor: 'background' }}>
-        <Text>Children within the ThemeProvider will be styled according to the theme.</Text>
+        <Text>
+          Children within the ThemeProvider will be styled according to the
+          theme.
+        </Text>
       </Box>
     </ThemeProvider>
   );

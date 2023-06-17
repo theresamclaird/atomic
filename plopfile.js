@@ -1,11 +1,15 @@
 const fs = require('fs');
 const rimraf = require('rimraf');
 
-const componentFoldersInPath = path => (
-  fs.readdirSync(path, { withFileTypes: true })
-    .filter(entry => entry.isDirectory() && fs.readdirSync(`${path}${entry.name}`).includes('index.js'))
-    .map(folder => folder.name)
-);
+const componentFoldersInPath = path =>
+  fs
+    .readdirSync(path, { withFileTypes: true })
+    .filter(
+      entry =>
+        entry.isDirectory() &&
+        fs.readdirSync(`${path}${entry.name}`).includes('index.js')
+    )
+    .map(folder => folder.name);
 
 const componentsRootPath = './src/components/';
 const componentPath = `${componentsRootPath}{{componentName}}/`;
@@ -26,7 +30,7 @@ module.exports = plop => {
         type: 'input',
         name: 'componentName',
         message: 'Component Name?',
-      }
+      },
     ],
     actions: answers => [
       {
@@ -60,7 +64,7 @@ module.exports = plop => {
         name: 'componentName',
         message: 'Component?',
         choices: componentFoldersInPath(componentsRootPath),
-      }
+      },
     ],
     actions: [
       answers => {

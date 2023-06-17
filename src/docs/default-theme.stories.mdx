@@ -6,14 +6,19 @@ import { Box, Text } from '../components';
 # Theme
 
 ## Default/Paragraph Text
+
 <Canvas>
   <Story name="Default/Paragraph Text">
     <Text>This is the default text style.</Text>
-    <Text>This text contains an <a href="https://www.mclairdfamily.com/">inline link</a>.</Text>
+    <Text>
+      This text contains an{' '}
+      <a href="https://www.mclairdfamily.com/">inline link</a>.
+    </Text>
   </Story>
 </Canvas>
 
 ## Headings
+
 <Canvas>
   <Story name="Headings">
     <Text as="h1">This is h1 text.</Text>
@@ -23,6 +28,7 @@ import { Box, Text } from '../components';
 </Canvas>
 
 ## Lists
+
 <Canvas>
   <Story name="Unordered List">
     <Box as="ul">
@@ -44,6 +50,7 @@ import { Box, Text } from '../components';
 </Canvas>
 
 ## Colors
+
 <Canvas>
   <Story name="Colors">
     <Box sx={{ p: '1rem', backgroundColor: 'background' }}>
@@ -62,20 +69,36 @@ import { Box, Text } from '../components';
 </Canvas>
 
 ## Breakpoints
+
 <Canvas>
   <Story name="Breakpoints">
-    <Box sx={{ p: '1rem' }}><Text>393px</Text></Box>
-    <Box sx={{ p: '1rem' }}><Text>768px</Text></Box>
-    <Box sx={{ p: '1rem' }}><Text>1280px</Text></Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>393px</Text>
+    </Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>768px</Text>
+    </Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>1280px</Text>
+    </Box>
   </Story>
 </Canvas>
 
 ## Spacing
+
 <Canvas>
   <Story name="Spacing">
-    <Box sx={{ p: '1rem' }}><Text>none: 0</Text></Box>
-    <Box sx={{ p: '1rem' }}><Text>small: 1rem</Text></Box>
-    <Box sx={{ p: '1rem' }}><Text>medium: 2rem</Text></Box>
-    <Box sx={{ p: '1rem' }}><Text>large: 3rem</Text></Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>none: 0</Text>
+    </Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>small: 1rem</Text>
+    </Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>medium: 2rem</Text>
+    </Box>
+    <Box sx={{ p: '1rem' }}>
+      <Text>large: 3rem</Text>
+    </Box>
   </Story>
 </Canvas>
