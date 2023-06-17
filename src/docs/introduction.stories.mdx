@@ -1,0 +1,88 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentation/Introduction" />
+
+# Atomic Component Library
+
+Atomic is a React component library consisting of
+
+- Atoms: Simple React components
+- Molecules: More complex components built from atoms
+- Modules: JavaScript modules
+- Themes: All components within Atomic are themed using Styled System
+- Hooks: A small collection of various hooks.
+
+## Repository
+
+<a href="https://github.com/theresamclaird/atomic">Code is on github.</a>
+
+## Usage
+
+I built these components both for fun and to use on my personal projects. I make no guarantees that these work as expected or are even useful to anybody except myself. Use at your own risk.
+
+## Installation
+
+The package itself is published to github, and requires an access token to install.
+
+```bash
+npm install @theresamclaird/atomic
+```
+
+## Linting
+
+```bash
+npm run lint
+```
+
+## Testing
+
+```bash
+npm test
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Repository Hygiene
+
+Coverage thresholds are set to 100%, and both testing and linting are run in a husky pre-commit hook.
+
+## Publishing
+
+```bash
+npm run patch
+```
+
+## Storybook
+
+```bash
+# install dependencies
+npm install
+
+# spin up storybook
+npm run storybook
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please <a href="https://github.com/theresamclaird/atomic/issues">open an issue</a> first
+to discuss what you would like to change.
+
+### Adding New Components
+
+Use plop to add and remove components:
+
+```bash
+npm run plop
+```
+
+Follow the (intuitive) prompts to add and delete components:
+
+```bash
+? [PLOP] Please choose a generator. (Use arrow keys)
+❯ addComponent - New Component
+  removeComponent - remove component
+```
