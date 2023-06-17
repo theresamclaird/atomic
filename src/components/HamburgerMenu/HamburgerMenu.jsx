@@ -45,6 +45,7 @@ function HamburgerMenu({ sx, children, ...props }) {
         </Box>
       </Box>
       <Box
+        data-testid="click-overlay"
         onClick={() => setIsOpen(false)}
         sx={{
           display: isOpen ? 'block' : 'none',
