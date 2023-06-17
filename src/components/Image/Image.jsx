@@ -47,9 +47,7 @@ function Image({ alt, src, sources, aspectRatio, sx, ...props }) {
   return (
     <Box as="picture">
       {sources.map(({ media, srcset }) => (
-        <Fragment key={nanoid()}>
-          <Box as="source" media={media} srcSet={srcset} />
-        </Fragment>
+        <Box key={nanoid()} as="source" media={media} srcSet={srcset} />
       ))}
       <Box
         as="img"
