@@ -1,0 +1,5 @@
+.plop-templates
+.storybook
+.husky
+coverage
+node_modules
