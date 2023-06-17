@@ -2,6 +2,20 @@ import { cut } from './cut';
 import { getDeck } from './deck';
 
 describe('cut.js', () => {
+  test('cut with default (50) percent', () => {
+    const deck = getDeck();
+    const cutDeck = cut(deck);
+
+    expect(cutDeck[0]).toMatchObject({ suit: 'clubs', label: 'A' });
+    expect(cutDeck[51]).toMatchObject({ suit: 'hearts', label: 'K' });
+  });
+
+  test('(trivial) cut with default (empty array) deck', () => {
+    const cutDeck = cut();
+
+    expect(cutDeck.length).toBe(0);
+  });
+
   test('deck order is correct after cut', () => {
     const deck = getDeck();
 

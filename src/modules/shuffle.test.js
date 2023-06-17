@@ -24,4 +24,9 @@ describe('shuffle.js', () => {
     */
     expect(JSON.stringify(deck)).not.toBe(JSON.stringify(shuffledDeck));
   });
+
+  test('shuffle with no deck', () => {
+    const shuffledDeck = shuffle();
+    expect(shuffledDeck.length).toBe(0);
+  });
 });
