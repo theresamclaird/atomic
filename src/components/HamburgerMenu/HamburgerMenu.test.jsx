@@ -32,5 +32,8 @@ describe('HamburgerMenu', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '☰' }));
     expect(screen.getByText('Menu Link')).toBeVisible();
+
+    fireEvent.click(screen.getByTestId('click-overlay'));
+    expect(screen.getByText('Menu Link')).not.toBeVisible();
   });
 });
