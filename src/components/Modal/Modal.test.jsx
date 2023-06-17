@@ -28,4 +28,18 @@ describe('Modal', () => {
     fireEvent.click(screen.getByRole('button', { name: 'OPEN' }));
     expect(screen.getByText('TEST')).toBeVisible();
   });
+
+  test('interactions', () => {
+    render(<ModalTest />);
+    expect(screen.getByRole('button', { name: 'OPEN' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'OPEN' }));
+    expect(screen.getByText('TEST')).toBeVisible();
+
+    fireEvent.click(screen.getByText('TEST'));
+    expect(screen.getByText('TEST')).toBeVisible();
+
+    fireEvent.click(screen.getByTestId('click-overlay'));
+    expect(screen.getByRole('button', { name: 'OPEN' })).toBeInTheDocument();
+  });
 });

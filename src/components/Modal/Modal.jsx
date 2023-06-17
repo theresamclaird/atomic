@@ -18,6 +18,7 @@ function Modal({ onClose, backgroundColor, children, show, sx, ...props }) {
 
   return createPortal(
     <Flex
+      data-testid="click-overlay"
       justify="center"
       align="center"
       sx={{
@@ -54,14 +55,13 @@ function Modal({ onClose, backgroundColor, children, show, sx, ...props }) {
 
 Modal.defaultProps = {
   backgroundColor: 'rgb(50, 50, 50, 0.6)',
-  onClose: () => null,
   show: false,
   sx: {},
 };
 
 Modal.propTypes = {
   backgroundColor: PropTypes.string,
-  onClose: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   show: PropTypes.bool,
   sx: PropTypes.objectOf(PropTypes.any),
