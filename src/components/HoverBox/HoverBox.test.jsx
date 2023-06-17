@@ -19,5 +19,9 @@ describe('HoverBox', () => {
     fireEvent.mouseEnter(screen.getByText('NO'));
     await waitFor(() => screen.getByText('YES'));
     expect(screen.getByText('YES')).toBeVisible();
+
+    fireEvent.mouseLeave(screen.getByText('YES'));
+    await waitFor(() => screen.getByText('NO'));
+    expect(screen.getByText('NO')).toBeVisible();
   });
 });
