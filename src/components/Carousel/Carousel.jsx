@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
+import { buttonLinkActive, buttonLinkInactive } from '../../images';
 import { Text, Box, Flex, Image, Button } from '..';
 
 const buttonCss = {
@@ -84,7 +85,13 @@ function Carousel({ images }) {
               <Button
                 variant="unstyled"
                 key={nanoid()}
-                label="●"
+                label={
+                  <Image
+                    src={buttonLinkInactive}
+                    alt="Selected"
+                    sx={{ width: 50, height: 50 }}
+                  />
+                }
                 disabled
                 sx={buttonCss}
               />
@@ -94,9 +101,15 @@ function Carousel({ images }) {
             <Button
               variant="unstyled"
               key={nanoid()}
-              label="○"
-              sx={buttonCss}
+              label={
+                <Image
+                  src={buttonLinkActive}
+                  alt="Select"
+                  sx={{ width: 50, height: 50 }}
+                />
+              }
               onClick={() => setImageIndex(index)}
+              sx={{ m: 0, p: 0 }}
             />
           );
         })}

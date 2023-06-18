@@ -1,3 +1,6 @@
+import buttonLinkActive from './buttonLinkActive.svg';
+import buttonLinkInactive from './buttonLinkInactive.svg';
+
 import jackSpades from './jack-spades.svg';
 import queenSpades from './queen-spades.svg';
 import kingSpades from './king-spades.svg';
@@ -15,6 +18,8 @@ import queenDiamonds from './queen-diamonds.svg';
 import kingDiamonds from './king-diamonds.svg';
 
 export {
+  buttonLinkActive,
+  buttonLinkInactive,
   jackSpades,
   queenSpades,
   kingSpades,

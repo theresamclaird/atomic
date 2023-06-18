@@ -39,7 +39,7 @@ npm run build
 
 ## Repository Hygiene
 
-Coverage thresholds are set to 100%, and both testing and linting are checked in a husky pre-commit hook. 
+Coverage thresholds are set to 100%, and both testing and linting are checked in a husky pre-commit hook.
 
 ## Publishing
 
