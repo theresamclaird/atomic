@@ -53,7 +53,6 @@ const theme = {
     },
     a: {
       ...defaultText,
-      textDecoration: 'none',
       color: 'anchor',
       ':hover': {
         textDecoration: 'underline',
