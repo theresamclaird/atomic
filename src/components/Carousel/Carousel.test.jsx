@@ -95,10 +95,10 @@ describe('Carousel', () => {
       />
     );
 
-    expect(screen.getByRole('button', { name: '●' })).toBeVisible();
-    expect(screen.getByRole('button', { name: '○' })).toBeVisible();
+    expect(screen.getByAltText('Selected')).toBeVisible();
+    expect(screen.getByAltText('Select')).toBeVisible();
 
-    fireEvent.click(screen.getByRole('button', { name: '○' }));
+    fireEvent.click(screen.getByAltText('Select'));
     expect(screen.getByAltText('Second Image')).toBeVisible();
   });
 });
