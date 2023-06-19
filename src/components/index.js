@@ -5,7 +5,6 @@ export * from './Button';
 export * from './Carousel';
 export * from './HamburgerMenu';
 export * from './Hero';
-export * from './HoverBox';
 export * from './Image';
 export * from './Modal';
 export * from './Navbar';
