@@ -12,8 +12,10 @@ function useMetronome(beatsPerMinute) {
   useEffect(() => {
     const { startMs, beatDurationMs } = state;
     const currentMs = new Date().getTime();
-    const beatCount = (currentMs - startMs) / beatDurationMs;
-    const drift = beatCount - Math.floor(beatCount);
+    const beatCount = Math.floor((currentMs - startMs) / beatDurationMs);
+
+    const elapsedMs = currentMs - startMs;
+    const drift = elapsedMs - beatCount * beatDurationMs;
 
     const timeout = setTimeout(() => {
       setState({
