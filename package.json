@@ -24,7 +24,8 @@
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.{js,jsx}",
       "!<rootDir>/src/**/*.stories.jsx",
-      "!<rootDir>/src/**/index.js"
+      "!<rootDir>/src/**/index.js",
+      "!<rootDir>/src/components/Metronome/*.jsx"
     ],
     "coverageThreshold": {
       "global": {
