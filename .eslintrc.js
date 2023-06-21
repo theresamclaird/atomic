@@ -38,7 +38,7 @@ module.exports = {
     'function-paren-newline': 'off',
     'object-curly-newline': 'off',
     'react/jsx-curly-newline': 'off',
-    'no-confusing-arrow': 'off'
+    'no-confusing-arrow': 'off',
   },
   ignorePatterns: ['.plop-templates/**/*.{js,jsx}'],
 };

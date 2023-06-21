@@ -15,9 +15,9 @@ export default {
 function TextTemplate(args) {
   return (
     <Text {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec massa sit
-      amet tortor pharetra scelerisque. Nunc vitae turpis eu lectus lacinia
-      tempor. Suspendisse mattis lectus id justo egestas ultricies.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec massa sit amet tortor
+      pharetra scelerisque. Nunc vitae turpis eu lectus lacinia tempor. Suspendisse mattis lectus id
+      justo egestas ultricies.
     </Text>
   );
 }

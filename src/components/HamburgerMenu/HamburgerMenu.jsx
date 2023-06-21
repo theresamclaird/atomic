@@ -8,11 +8,7 @@ function HamburgerMenu({ sx, children, ...props }) {
   return (
     <>
       <Box onClick={() => setIsOpen(!isOpen)} sx={sx} {...props}>
-        <Button
-          variant="unstyled"
-          sx={{ cursor: 'pointer', fontSize: '2rem' }}
-          label="☰"
-        />
+        <Button variant="unstyled" sx={{ cursor: 'pointer', fontSize: '2rem' }} label="☰" />
         <Box
           sx={{
             '@keyframes fadeIn': {

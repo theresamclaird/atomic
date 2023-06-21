@@ -6,7 +6,7 @@ import { useMetronome } from './useMetronome';
 
 function Metronome({ beatsPerMinute, sx, ...props }) {
   const [state] = useMetronome(beatsPerMinute);
-  const { beatDurationMs, startMs, currentMs, beatCount, drift } = state;
+  const { beatDurationMs, startMs, currentMs, beatCount, drift, averageDrift } = state;
 
   return (
     <Box sx={{ ...sx }} {...props}>
@@ -17,6 +17,7 @@ function Metronome({ beatsPerMinute, sx, ...props }) {
         <Text as="li">{`Current (ms): ${currentMs}`}</Text>
         <Text as="li">{`Beat Count: ${beatCount}`}</Text>
         <Text as="li">{`Drift: ${drift}`}</Text>
+        <Text as="li">{`Average Drift: ${averageDrift}`}</Text>
       </Box>
     </Box>
   );

@@ -72,13 +72,7 @@ function Carousel({ images }) {
           }}
         />
       </Box>
-      <Flex
-        direction="row"
-        justify="center"
-        align="center"
-        gap={1}
-        sx={{ mb: 1 }}
-      >
+      <Flex direction="row" justify="center" align="center" gap={1} sx={{ mb: 1 }}>
         {images.map((image, index) => {
           if (index === imageIndex) {
             return (
@@ -86,11 +80,7 @@ function Carousel({ images }) {
                 variant="unstyled"
                 key={nanoid()}
                 label={
-                  <Image
-                    src={buttonLinkInactive}
-                    alt="Selected"
-                    sx={{ width: 50, height: 50 }}
-                  />
+                  <Image src={buttonLinkInactive} alt="Selected" sx={{ width: 50, height: 50 }} />
                 }
                 disabled
                 sx={buttonCss}
@@ -101,13 +91,7 @@ function Carousel({ images }) {
             <Button
               variant="unstyled"
               key={nanoid()}
-              label={
-                <Image
-                  src={buttonLinkActive}
-                  alt="Select"
-                  sx={{ width: 50, height: 50 }}
-                />
-              }
+              label={<Image src={buttonLinkActive} alt="Select" sx={{ width: 50, height: 50 }} />}
               onClick={() => setImageIndex(index)}
               sx={{ m: 0, p: 0 }}
             />
