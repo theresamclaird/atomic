@@ -6,6 +6,10 @@ import { useMetronome } from './useMetronome';
 import { Flasher } from './Flasher';
 
 function Metronome({ startMs, metronomeNumber, beatsPerMinutes, sx, ...props }) {
+  /*
+   * Any way I can extract the index number to the array out of these definitions and pass it in
+   * when referenced?
+   */
   const [whole] = useMetronome(beatsPerMinutes[metronomeNumber] / 4, startMs);
   const [half] = useMetronome(beatsPerMinutes[metronomeNumber] / 2, startMs);
   const [quarter] = useMetronome(beatsPerMinutes[metronomeNumber], startMs);
@@ -13,6 +17,9 @@ function Metronome({ startMs, metronomeNumber, beatsPerMinutes, sx, ...props }) 
   const [sixteenth] = useMetronome(beatsPerMinutes[metronomeNumber] * 4, startMs);
   const [thirtysecond] = useMetronome(beatsPerMinutes[metronomeNumber] * 8, startMs);
 
+  /*
+   * The following almost-duplicated definitions go away if I can pass in the array index
+   */
   const [whole1] = useMetronome(beatsPerMinutes[metronomeNumber + 1] / 4, startMs);
   const [half1] = useMetronome(beatsPerMinutes[metronomeNumber + 1] / 2, startMs);
   const [quarter1] = useMetronome(beatsPerMinutes[metronomeNumber + 1], startMs);
