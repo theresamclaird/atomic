@@ -4,7 +4,6 @@ module.exports = {
     "@storybook/addon-links",
     { name: "@storybook/addon-essentials", options: { actions: false } },
     // "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
     "@storybook/addon-a11y"],
   framework: {
     name: "@storybook/react-webpack5",
