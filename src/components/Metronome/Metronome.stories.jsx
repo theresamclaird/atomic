@@ -13,6 +13,9 @@ function Template(args) {
   return <Metronome {...args} />;
 }
 
+export const Second = Template.bind({});
+Second.args = { beatsPerMinute: 60 };
+
 export const Andante = Template.bind({});
 Andante.args = { beatsPerMinute: 73 };
 
