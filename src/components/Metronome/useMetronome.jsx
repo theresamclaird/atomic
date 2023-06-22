@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
-function useMetronome(beatsPerMinute) {
+function useMetronome(beatsPerMinute, startMs) {
   const [state, setState] = useState({
-    startMs: new Date().getTime(),
     currentMs: null,
     beatDurationMs: 60000 / beatsPerMinute,
     beatCount: 0,
@@ -12,7 +11,7 @@ function useMetronome(beatsPerMinute) {
   });
 
   useEffect(() => {
-    const { startMs, beatDurationMs, driftHistory } = state;
+    const { beatDurationMs, driftHistory } = state;
     const currentMs = new Date().getTime();
     const beatCount = Math.floor((currentMs - startMs) / beatDurationMs);
 
@@ -38,7 +37,7 @@ function useMetronome(beatsPerMinute) {
     return () => {
       clearTimeout(timeout);
     };
-  }, [beatsPerMinute, state]);
+  }, [beatsPerMinute, startMs, state]);
 
   return [state];
 }

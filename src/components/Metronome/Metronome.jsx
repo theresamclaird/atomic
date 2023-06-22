@@ -1,34 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '../Box';
+import { Flex } from '../Box';
 import { Text } from '../Text';
 import { useMetronome } from './useMetronome';
+import { Flasher } from './Flasher';
 
-function Metronome({ beatsPerMinute, sx, ...props }) {
-  const [state] = useMetronome(beatsPerMinute);
-  const { beatDurationMs, startMs, currentMs, beatCount, drift, averageDrift } = state;
+function Metronome({ startMs, beatsPerMinute, sx, ...props }) {
+  const [whole] = useMetronome(beatsPerMinute, startMs);
+  const [half] = useMetronome(beatsPerMinute * 2, startMs);
+  const [quarter] = useMetronome(beatsPerMinute * 4, startMs);
+  const [eighth] = useMetronome(beatsPerMinute * 8, startMs);
 
   return (
-    <Box sx={{ ...sx }} {...props}>
-      <Box as="ul">
-        <Text as="li">{`Beats per Minute: ${beatsPerMinute}`}</Text>
-        <Text as="li">{`Beat Duration (ms): ${beatDurationMs}`}</Text>
-        <Text as="li">{`Start (ms): ${startMs}`}</Text>
-        <Text as="li">{`Current (ms): ${currentMs}`}</Text>
-        <Text as="li">{`Beat Count: ${beatCount}`}</Text>
-        <Text as="li">{`Drift: ${drift}`}</Text>
-        <Text as="li">{`Average Drift: ${averageDrift}`}</Text>
-      </Box>
-    </Box>
+    <Flex direction="column" justify="space-between" align="center">
+      <Text>{`BPM: ${beatsPerMinute}`}</Text>
+      <Flex sx={{ ...sx }} {...props}>
+        <Flasher label="whole" beatCount={whole.beatCount} />
+        <Flasher label="half" beatCount={half.beatCount} />
+        <Flasher label="quarter" beatCount={quarter.beatCount} />
+        <Flasher label="eighth" beatCount={eighth.beatCount} />
+      </Flex>
+    </Flex>
   );
 }
 
 Metronome.defaultProps = {
-  beatsPerMinute: 60,
+  beatsPerMinute: 15,
   sx: {},
 };
 
 Metronome.propTypes = {
+  startMs: PropTypes.number.isRequired,
   sx: PropTypes.objectOf(PropTypes.any),
   beatsPerMinute: PropTypes.number,
 };

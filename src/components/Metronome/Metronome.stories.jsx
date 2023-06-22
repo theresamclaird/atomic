@@ -13,17 +13,19 @@ function Template(args) {
   return <Metronome {...args} />;
 }
 
-export const Second = Template.bind({});
-Second.args = { beatsPerMinute: 60 };
+export const Orchestrated = Template.bind({});
+Orchestrated.args = {
+  startMs: new Date().getTime(),
+};
 
-export const Andante = Template.bind({});
-Andante.args = { beatsPerMinute: 73 };
+// export const Andante = Template.bind({});
+// Andante.args = { beatsPerMinute: 73 };
 
-export const Moderato = Template.bind({});
-Moderato.args = { beatsPerMinute: 86 };
+// export const Moderato = Template.bind({});
+// Moderato.args = { beatsPerMinute: 86 };
 
-export const Allegretto = Template.bind({});
-Allegretto.args = { beatsPerMinute: 98 };
+// export const Allegretto = Template.bind({});
+// Allegretto.args = { beatsPerMinute: 98 };
 
-export const Allegro = Template.bind({});
-Allegro.args = { beatsPerMinute: 109 };
+// export const Allegro = Template.bind({});
+// Allegro.args = { beatsPerMinute: 109 };
