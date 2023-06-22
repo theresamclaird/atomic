@@ -22,7 +22,6 @@ export const parameters = {
         'Documentation', ['Introduction'],
         'Atoms', ['Box', 'Flex', 'Grid', 'Text', 'Anchor', 'Button', 'Panel', 'Image', 'Accordion', 'HamburgerMenu'],
         'Molecules', ['Hero', 'PlayingCard', 'Carousel', 'AccordionGroup', 'Navbar', 'Modal'],
-        'Hooks',
         'Modules',
       ],
     },
