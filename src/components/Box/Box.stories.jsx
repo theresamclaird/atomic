@@ -13,7 +13,7 @@ export default {
 function Template(args) {
   return (
     <Box {...args}>
-      <Text>This text is inside a Box.</Text>
+      <Text>This text is inside a Box component.</Text>
     </Box>
   );
 }
