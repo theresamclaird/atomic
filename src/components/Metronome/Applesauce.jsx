@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import useSound from 'use-sound';
 import { Flex } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import tick from './metronome-85688.mp3';
+import click from './click.mp3';
+import clack from './clack.mp3';
 
 function Applesauce() {
-  const [beatsPerMinute, setBeatsPerMinute] = useState(60);
+  const [beatsPerMinute, setBeatsPerMinute] = useState(120);
   const [startMs, setStartMs] = useState(null);
-  const [state, setState] = useState({
-    beatCount: 0,
-  });
-  const [play] = useSound(tick);
+  const [beatCount, setBeatCount] = useState(0);
+  const [playClick] = useSound(click);
+  const [playClack] = useSound(clack);
+
+  const playSound = useCallback(() => {
+    if (beatCount % 4 === 0) {
+      playClick();
+    } else {
+      playClack();
+    }
+    setBeatCount(() => beatCount + 1); // TODO drift > beatDurationMs?
+  }, [beatCount, setBeatCount, playClick, playClack]);
 
   useEffect(() => {
     if (!startMs) {
@@ -19,26 +28,18 @@ function Applesauce() {
     }
 
     const currentMs = new Date().getTime();
-    const beatDurationMs = 60000 / beatsPerMinute;
-    const beatCount = Math.floor((currentMs - startMs) / beatDurationMs);
     const elapsedMs = currentMs - startMs;
+    const beatDurationMs = 60000 / beatsPerMinute;
     const drift = elapsedMs - beatCount * beatDurationMs;
 
     const timeout = setTimeout(() => {
-      setState({
-        ...state,
-        beatCount: Math.floor(beatCount),
-      });
-    }, beatDurationMs - drift);
+      playSound();
+    }, beatDurationMs - drift); // TODO drift > beatDurationMs?
 
     return () => {
       clearTimeout(timeout);
     };
-  }, [beatsPerMinute, startMs, state]);
-
-  useEffect(() => {
-    play();
-  }, [state, play]);
+  }, [beatsPerMinute, startMs, beatCount, playSound]);
 
   return (
     <Flex direction="column" justify="space-between" align="center" gap={3} sx={{ m: 2 }}>
@@ -51,7 +52,15 @@ function Applesauce() {
             onChange={e => setBeatsPerMinute(e.target.value)}
           />
         </Text>
-        {startMs && <Button label="Stop" onClick={() => setStartMs(null)} />}
+        {startMs && (
+          <Button
+            label="Stop"
+            onClick={() => {
+              setBeatCount(0);
+              setStartMs(null);
+            }}
+          />
+        )}
         {!startMs && <Button label="Start" onClick={() => setStartMs(new Date().getTime())} />}
       </Flex>
     </Flex>
