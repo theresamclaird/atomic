@@ -61,7 +61,8 @@
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "nanoid": "^4.0.2",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "use-sound": "^4.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
