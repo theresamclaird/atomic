@@ -5,9 +5,7 @@ const componentFoldersInPath = path =>
   fs
     .readdirSync(path, { withFileTypes: true })
     .filter(
-      entry =>
-        entry.isDirectory() &&
-        fs.readdirSync(`${path}${entry.name}`).includes('index.js')
+      entry => entry.isDirectory() && fs.readdirSync(`${path}${entry.name}`).includes('index.js')
     )
     .map(folder => folder.name);
 

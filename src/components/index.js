@@ -6,6 +6,7 @@ export * from './Carousel';
 export * from './HamburgerMenu';
 export * from './Hero';
 export * from './Image';
+export * from './Metronome';
 export * from './Modal';
 export * from './Navbar';
 export * from './Panel';

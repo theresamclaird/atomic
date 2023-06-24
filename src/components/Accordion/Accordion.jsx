@@ -4,14 +4,7 @@ import { Box, Flex } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-function Accordion({
-  expanded,
-  label,
-  expandSymbol,
-  collapseSymbol,
-  children,
-  ...props
-}) {
+function Accordion({ expanded, label, expandSymbol, collapseSymbol, children, ...props }) {
   return (
     <Box {...props}>
       <Flex

@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 
-function AccordionGroup({
-  reducer,
-  children,
-  expandSymbol,
-  collapseSymbol,
-  ...props
-}) {
+function AccordionGroup({ reducer, children, expandSymbol, collapseSymbol, ...props }) {
   const childArray = Children.toArray(children);
   const [state, dispatch] = useReducer(
     reducer,

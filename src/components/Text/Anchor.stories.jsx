@@ -13,8 +13,7 @@ export default {
 function AnchorTemplate(args) {
   return (
     <Text sx={{ margin: '1rem', padding: '1rem' }}>
-      This text contains a link to{' '}
-      <Anchor {...args}>atomiccomponentlibrary.com</Anchor>.
+      This text contains a link to <Anchor {...args}>atomiccomponentlibrary.com</Anchor>.
     </Text>
   );
 }
