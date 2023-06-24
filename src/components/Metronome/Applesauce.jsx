@@ -1,70 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import useSound from 'use-sound';
-import { Flex } from '../Box';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../Button';
-import { Text } from '../Text';
-import click from './click.mp3';
-import clack from './clack.mp3';
+import { Interval } from './Interval';
 
 function Applesauce() {
-  const [beatsPerMinute, setBeatsPerMinute] = useState(120);
-  const [startMs, setStartMs] = useState(null);
-  const [beatCount, setBeatCount] = useState(0);
-  const [playClick] = useSound(click);
-  const [playClack] = useSound(clack);
-
-  const playSound = useCallback(() => {
-    if (beatCount % 4 === 0) {
-      playClick();
-    } else {
-      playClack();
-    }
-    setBeatCount(() => beatCount + 1); // TODO drift > beatDurationMs?
-  }, [beatCount, setBeatCount, playClick, playClack]);
+  const [active, setActive] = useState(false);
+  const [interval] = useState(new Interval(120));
 
   useEffect(() => {
-    if (!startMs) {
-      return () => null;
+    if (active) {
+      interval.start(() => console.log('tick'));
+    } else {
+      interval.stop();
     }
+  }, [active, interval]);
 
-    const currentMs = new Date().getTime();
-    const elapsedMs = currentMs - startMs;
-    const beatDurationMs = 60000 / beatsPerMinute;
-    const drift = elapsedMs - beatCount * beatDurationMs;
-
-    const timeout = setTimeout(() => {
-      playSound();
-    }, beatDurationMs - drift); // TODO drift > beatDurationMs?
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [beatsPerMinute, startMs, beatCount, playSound]);
-
-  return (
-    <Flex direction="column" justify="space-between" align="center" gap={3} sx={{ m: 2 }}>
-      <Flex as="form">
-        <Text as="label">
-          BPM:&nbsp;
-          <input
-            type="number"
-            value={beatsPerMinute}
-            onChange={e => setBeatsPerMinute(e.target.value)}
-          />
-        </Text>
-        {startMs && (
-          <Button
-            label="Stop"
-            onClick={() => {
-              setBeatCount(0);
-              setStartMs(null);
-            }}
-          />
-        )}
-        {!startMs && <Button label="Start" onClick={() => setStartMs(new Date().getTime())} />}
-      </Flex>
-    </Flex>
-  );
+  return <Button label={active ? 'stop' : 'start'} onClick={() => setActive(!active)} />;
 }
 
 export { Applesauce, Applesauce as default };

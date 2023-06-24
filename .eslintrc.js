@@ -13,7 +13,7 @@ module.exports = {
   overrides: [],
   parserOptions: {
     ecmaFeatures: { jsx: true },
-    ecmaVersion: 12,
+    ecmaVersion: 13,
     sourceType: 'module',
   },
   plugins: ['react'],
@@ -39,6 +39,7 @@ module.exports = {
     'object-curly-newline': 'off',
     'react/jsx-curly-newline': 'off',
     'no-confusing-arrow': 'off',
+    'lines-between-class-members': 'off',
   },
   ignorePatterns: ['.plop-templates/**/*.{js,jsx}'],
 };
