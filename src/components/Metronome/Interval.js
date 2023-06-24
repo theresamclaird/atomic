@@ -1,4 +1,17 @@
 class Interval {
+  static async externalTick(startMs, beatDurationMs) {
+    return new Promise(resolve => {
+      const currentMs = new Date().getTime();
+      const beatCount = Math.floor((currentMs - startMs) / beatDurationMs);
+      const elapsedMs = currentMs - startMs;
+      const drift = elapsedMs - beatCount * beatDurationMs;
+
+      setTimeout(() => {
+        resolve();
+      }, beatDurationMs - drift);
+    });
+  }
+
   #beatDurationMs;
   #active = false;
   #startMs = 0;
@@ -11,20 +24,13 @@ class Interval {
     this.#beatDurationMs = 60000 / value;
   }
 
-  #tick(callback) {
+  async #tick(callback) {
     if (!this.#active || !this.#startMs) {
       return;
     }
 
-    const currentMs = new Date().getTime();
-    const beatCount = Math.floor((currentMs - this.#startMs) / this.#beatDurationMs);
-    const elapsedMs = currentMs - this.#startMs;
-    const drift = elapsedMs - beatCount * this.#beatDurationMs;
-
-    setTimeout(() => {
-      this.#tick(callback);
-      callback();
-    }, this.#beatDurationMs - drift);
+    await Interval.externalTick(this.#startMs, this.#beatDurationMs);
+    callback();
   }
 
   start(callback) {
