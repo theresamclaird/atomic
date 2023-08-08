@@ -4,7 +4,7 @@ export default function useFetch(url) {
   const isMountedRef = useRef(false);
   const [responseData, setResponseData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   console.log('useFetch render');
 

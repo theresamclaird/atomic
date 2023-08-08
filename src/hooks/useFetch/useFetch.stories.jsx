@@ -21,7 +21,6 @@ function Rick() {
     throw error;
   }
   if (loading) return <h1>loading...</h1>;
-  if (!responseData) return <h1>No data</h1>;
 
   const { id, name, status, species, gender, image } = responseData;
 
