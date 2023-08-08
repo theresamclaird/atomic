@@ -6,10 +6,15 @@ export default function useFetch(url) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  console.log('useFetch render');
+
   useEffect(() => {
+    console.log('useEffect');
+
     isMountedRef.current = true;
 
     async function init() {
+      console.log('init');
       try {
         const response = await fetch(url);
         if (response.ok) {
