@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { Text } from '../Text';
 
-export default class ErrorBoundary extends Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,3 +41,5 @@ ErrorBoundary.propTypes = {
   fallback: PropTypes.node,
   children: PropTypes.node.isRequired,
 };
+
+export { ErrorBoundary, ErrorBoundary as default };
