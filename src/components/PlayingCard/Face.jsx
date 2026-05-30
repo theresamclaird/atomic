@@ -5,10 +5,11 @@ import { Box, Flex } from '../Box';
 import Pip from './Pip';
 
 function Face({ suit, color, image, label, pip }) {
-  const top = '0.9rem';
-  const bottom = '0.9rem';
-  const left = '1.5rem';
-  const right = '1.5rem';
+  // `em` so face-card pip offsets scale with the card.
+  const top = '0.9em';
+  const bottom = '0.9em';
+  const left = '1.5em';
+  const right = '1.5em';
 
   const topPipStyle = {
     J: {
@@ -67,7 +68,7 @@ function Face({ suit, color, image, label, pip }) {
         <Box
           sx={{
             border: 'solid 1px #00f',
-            borderRadius: '0.15rem',
+            borderRadius: '0.15em',
             height: '100%',
           }}
           as="img"
@@ -78,7 +79,7 @@ function Face({ suit, color, image, label, pip }) {
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1.5rem',
+          fontSize: '1.5em',
           position: 'absolute',
           color,
           ...topPipStyle,
@@ -87,7 +88,7 @@ function Face({ suit, color, image, label, pip }) {
       <Pip
         symbol={pip}
         sx={{
-          fontSize: '1.5rem',
+          fontSize: '1.5em',
           position: 'absolute',
           color,
           transform: 'rotate(180deg)',

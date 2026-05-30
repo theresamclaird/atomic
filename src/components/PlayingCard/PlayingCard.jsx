@@ -7,6 +7,7 @@ import Face from './Face';
 
 function PlayingCard({
   width,
+  size,
   color,
   suit,
   face,
@@ -16,6 +17,20 @@ function PlayingCard({
   sx,
   ...props
 }) {
+  // The card scales as a single unit: the outer box sets the width (any CSS
+  // length, including "100%"), aspect-ratio derives the height, and the inner
+  // card's font-size tracks the card width via container query units — so every
+  // interior dimension (declared in `em`) stays proportional at any size.
+  //
+  // `size` is preferred (e.g. "100%", "80px", 96 -> "96px"). The legacy numeric
+  // `width` is kept: it used to be the grid width in rem, whose outer footprint
+  // was ~width + 2rem, so we map it accordingly.
+  let cardWidth;
+  if (size != null) {
+    cardWidth = typeof size === 'number' ? `${size}px` : size;
+  } else {
+    cardWidth = `${(width ?? 6) + 2}rem`;
+  }
   const pipStyle = {
     1: {
       '& > :first-of-type': {
@@ -396,60 +411,78 @@ function PlayingCard({
     <Box
       sx={{
         display: 'inline-block',
-        boxShadow: '0 0 2px #666',
-        position: 'relative',
-        backgroundColor: 'white',
-        border: 'solid 1px',
-        borderColor: 'black',
-        borderRadius: '0.33rem',
-        p: '0.5rem',
+        width: cardWidth,
+        aspectRatio: '5 / 7',
+        containerType: 'inline-size',
         ...sx,
       }}
       {...props}
     >
-      <Grid
-        columns="repeat(6, 1fr)"
-        rows="repeat(16, 1fr)"
+      <Box
         sx={{
-          width: `${width}rem`,
-          height: `${width * 1.4}rem`,
-          p: '0.5rem',
-          ...applesauce,
+          position: 'relative',
+          boxSizing: 'border-box',
+          width: '100%',
+          height: '100%',
+          // 1em == 10% of the card's width, so all `em` sizes below scale with
+          // the card. This is the single knob that makes the card resolution-
+          // independent and keeps the pips from ever overlapping.
+          fontSize: '10cqw',
+          backgroundColor: 'white',
+          borderStyle: 'solid',
+          borderWidth: 'max(1px, 0.05em)',
+          borderColor: 'black',
+          borderRadius: '0.4em',
+          boxShadow: '0 0 0.15em #666',
+          p: '0.55em',
         }}
       >
-        {face ? (
-          <Face
-            color={color}
-            suit={suit}
-            image={face}
+        <Grid
+          columns="repeat(6, 1fr)"
+          rows="repeat(16, 1fr)"
+          sx={{
+            boxSizing: 'border-box',
+            width: '100%',
+            height: '100%',
+            p: '0.4em',
+            ...applesauce,
+          }}
+        >
+          {face ? (
+            <Face
+              color={color}
+              suit={suit}
+              image={face}
+              label={label}
+              pip={pip}
+            />
+          ) : (
+            <Pips count={value} pip={pip} color={color} />
+          )}
+          <Corner
             label={label}
             pip={pip}
+            sx={{ top: '0.2em', left: '0.2em', color }}
           />
-        ) : (
-          <Pips count={value} pip={pip} color={color} />
-        )}
-        <Corner
-          label={label}
-          pip={pip}
-          sx={{ top: '0.25rem', left: '0.25rem', color }}
-        />
-        <Corner
-          label={label}
-          pip={pip}
-          sx={{
-            bottom: '0.25rem',
-            right: '0.25rem',
-            transform: 'rotate(180deg)',
-            color,
-          }}
-        />
-      </Grid>
+          <Corner
+            label={label}
+            pip={pip}
+            sx={{
+              bottom: '0.2em',
+              right: '0.2em',
+              transform: 'rotate(180deg)',
+              color,
+            }}
+          />
+        </Grid>
+      </Box>
     </Box>
   );
 }
 
 PlayingCard.defaultProps = {
   width: 6,
+  size: null,
   face: null,
   sx: {},
 };
@@ -461,6 +494,9 @@ PlayingCard.propTypes = {
   label: PropTypes.string.isRequired,
   pip: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
+  /** Card width — any CSS length ("100%", "80px") or a number (px). Preferred. */
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Legacy: grid width in rem (outer footprint ≈ width + 2rem). */
   width: PropTypes.number,
   sx: PropTypes.objectOf(PropTypes.any),
 };

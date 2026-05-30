@@ -11,7 +11,9 @@ function Pip({ symbol, sx, ...props }) {
       sx={{
         m: 0,
         p: 0,
-        fontSize: '2rem',
+        // `em` so pips scale with the card (set by PlayingCard's font-size).
+        fontSize: '2.2em',
+        lineHeight: 1,
         ...sx,
       }}
       {...props}

@@ -13,6 +13,10 @@ function Corner({ sx, label, pip }) {
         position: 'absolute',
         p: 0,
         m: 0,
+        // `em` so the corner index scales with the card (was inheriting the
+        // document root size, which didn't scale).
+        fontSize: '1.2em',
+        lineHeight: 1,
         '&::after': { content: `"${pip}"` },
         ...sx,
       }}
