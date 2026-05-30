@@ -12,7 +12,7 @@ Atomic is a React component library consisting of
 - Themes: All components within Atomic are themed using Styled System
 - Hooks: Simple React hooks
 
-I built these components both for fun and to use on my personal projects. I make no guarantees that these work as expected or are even useful to anybody except myself. Use at your own risk.
+I built these components for fun and to use on my own projects. They're released as open source under the MIT license — free for anyone to use, modify, and distribute. As with any MIT-licensed software, they're provided as-is, without warranty.
 
 ## Repository
 
@@ -20,11 +20,13 @@ I built these components both for fun and to use on my personal projects. I make
 
 ## Installation
 
-The package itself is published to github, and requires an access token to install.
+Published on the public npm registry under the MIT license — no access token required.
 
 ```bash
 npm install @theresamclaird/atomic
 ```
+
+`react`, `react-dom`, and `prop-types` are peer dependencies, so install them alongside it if your project doesn't already have them.
 
 ## Linting
 
@@ -46,13 +48,21 @@ npm run build
 
 ## Repository Hygiene
 
-Coverage thresholds are set to 100%, and both testing and linting are run in a husky pre-commit hook.
+Coverage thresholds are set to 80%, and both testing and linting are run in a husky pre-commit hook.
 
 ## Publishing
 
+Releases publish automatically to the public npm registry via GitHub Actions
+(trusted publishing / OIDC — no tokens stored) whenever a GitHub Release is
+created:
+
 ```bash
-npm run patch
+npm version patch
+git push && git push --tags
 ```
+
+Then draft a GitHub Release from the new tag, and the workflow builds, tests,
+and publishes the package.
 
 ## Storybook
 
