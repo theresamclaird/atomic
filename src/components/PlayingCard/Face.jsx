@@ -5,11 +5,17 @@ import { Box, Flex } from '../Box';
 import Pip from './Pip';
 
 function Face({ suit, color, image, label, pip }) {
-  // `em` so face-card pip offsets scale with the card.
-  const top = '0.9em';
-  const bottom = '0.9em';
-  const left = '1.5em';
-  const right = '1.5em';
+  // Court-image height — the single knob for face-card art size. In `em`, which
+  // tracks the card width (PlayingCard sets font-size: 10cqw, so 10em == card
+  // width). Tune this one value to make the portrait larger/smaller.
+  const imageHeight = '10.5em';
+
+  // Pip inset from the image's own corners (the pips are positioned relative to
+  // the image box, so they always land on the art regardless of card size).
+  const top = '0.45em';
+  const bottom = '0.45em';
+  const left = '0.45em';
+  const right = '0.45em';
 
   const topPipStyle = {
     J: {
@@ -54,48 +60,53 @@ function Face({ suit, color, image, label, pip }) {
   }[label][suit];
 
   return (
-    <>
-      <Flex
-        sx={{
-          gridRowStart: 1,
-          gridRowEnd: 'span 16',
-          gridColumnStart: 1,
-          gridColumnEnd: 'span 6',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+    <Flex
+      sx={{
+        gridRowStart: 1,
+        gridRowEnd: 'span 16',
+        gridColumnStart: 1,
+        gridColumnEnd: 'span 6',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      {/* Wrapper shrinks to the image so the pips can be pinned to its corners. */}
+      <Box sx={{ position: 'relative', height: imageHeight, lineHeight: 0 }}>
         <Box
           sx={{
+            display: 'block',
+            height: '100%',
+            width: 'auto',
             border: 'solid 1px #00f',
             borderRadius: '0.15em',
-            height: '100%',
           }}
           as="img"
           src={image}
           alt="card"
         />
-      </Flex>
-      <Pip
-        symbol={pip}
-        sx={{
-          fontSize: '1.5em',
-          position: 'absolute',
-          color,
-          ...topPipStyle,
-        }}
-      />
-      <Pip
-        symbol={pip}
-        sx={{
-          fontSize: '1.5em',
-          position: 'absolute',
-          color,
-          transform: 'rotate(180deg)',
-          ...bottomPipStyle,
-        }}
-      />
-    </>
+        <Pip
+          symbol={pip}
+          sx={{
+            fontSize: '1.5em',
+            lineHeight: 1,
+            position: 'absolute',
+            color,
+            ...topPipStyle,
+          }}
+        />
+        <Pip
+          symbol={pip}
+          sx={{
+            fontSize: '1.5em',
+            lineHeight: 1,
+            position: 'absolute',
+            color,
+            transform: 'rotate(180deg)',
+            ...bottomPipStyle,
+          }}
+        />
+      </Box>
+    </Flex>
   );
 }
 
