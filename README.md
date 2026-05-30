@@ -14,11 +14,13 @@ I built these components both for fun and to use on my personal projects. I make
 
 ## Installation
 
-The package itself is published to github, and requires an access token to install.
+Published on the public npm registry — no access token required.
 
 ```bash
 npm install @theresamclaird/atomic
 ```
+
+`react`, `react-dom`, and `prop-types` are peer dependencies, so install them alongside it if your project doesn't already have them.
 
 ## Linting
 
@@ -44,9 +46,16 @@ Coverage thresholds are set to 100%, and both testing and linting are checked in
 
 ## Publishing
 
+Releases publish automatically to the public npm registry via GitHub Actions
+(trusted publishing / OIDC — no tokens stored). To cut a release:
+
 ```bash
-npm run patch
+npm version patch        # bump version and tag
+git push && git push --tags
 ```
+
+Then draft a GitHub Release from the new tag; the publish workflow builds,
+tests, and publishes the package.
 
 ## Storybook
 
